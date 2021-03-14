@@ -10,6 +10,7 @@
 *.db-wal
 *.sqlite
 *.log
+*.log.txt
 *.db
 *.sqlite
 .cloud
@@ -45,3 +46,4 @@ mqtt
 node-red
 storage.bkp
 .*DS_Store
+zigbee2mqtt
