@@ -1,0 +1,76 @@
+- platform: moon
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_use_percent
+    - type: processor_use
+    - type: last_boot
+
+#https://www.home-assistant.io/components/sensor.command_line/
+- platform: command_line
+  name: CPU Temperature
+  command: "cat /sys/class/thermal/thermal_zone2/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) | round(1) }}'
+
+#https://www.home-assistant.io/integrations/uptime/
+- platform: uptime
+  name: Time Online
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
+
+- platform: template
+  sensors:
+    sensor_count:
+      friendly_name: 'Número de Sensores'
+      value_template: '{{ states.sensor | count }}'
+
+    automation_count:
+      friendly_name: 'Número de Automações'
+      value_template: '{{ states.automation | count }}'
+
+    script_count:
+      friendly_name: 'Número de Scripts'
+      value_template: '{{ states.script | count }}'
+
+    switch_count:
+      friendly_name: 'Número de Switches'
+      value_template: '{{ states.switch | count }}'
+
+    binary_sensor_count:
+      friendly_name: 'Número de Sensor Binário'
+      value_template: '{{ states.binary_sensor | count }}'
+
+    lights_count:
+      friendly_name: 'Número de Luzes'
+      value_template: '{{ states.light | count }}'
+
+    tracker_count:
+      friendly_name: 'Número de Devices'
+      value_template: '{{ states.device_tracker | count }}'
+
+    zwave_count:
+      friendly_name: 'Zwave Devices'
+      value_template: '{{ states.zwave_count | count }}'
+
+    camera_count:
+      friendly_name: 'Zwave Devices'
+      value_template: '{{ states.camera | count }}'
+
+    media_player_count:
+      friendly_name: 'Multimidia'
+      value_template: '{{ states.media_player | count }}'
+
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'date_time'
+    - 'date_time_utc'
+    - 'date_time_iso'
+    - 'time_date'
+    - 'time_utc'
+    - 'beat'

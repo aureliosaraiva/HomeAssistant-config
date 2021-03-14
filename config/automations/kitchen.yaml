@@ -1,0 +1,38 @@
+- alias: when_door_fridge_is_open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_fridge_contact
+      from: 'off'
+      to: 'on'
+      for: '00:00:15'
+    - platform: homeassistant
+      event: start
+    - platform: event
+      event_type: automation_reloaded
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: binary_sensor.door_fridge_contact
+          state: 'on'
+  action:
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: input_boolean.away_mode
+              state: 'on'
+          sequence:
+            - service: notify.AURELIO
+              data_template:
+                message: "Porta da geladeira esta aberta!"
+      default:
+        - service: script.speech_engine
+          data_template:
+            media_player: media_player.echo_dot_cozinha
+            custom_message: >
+              {{ [
+               "Identifiquei que a porta da geladeira ficou aberta. Você poderia fechar?",
+               "Meus sensores me dizem que a porta da geladeira está aberta.",
+               "Você poderia fechar a porta da geladeira?"
+               ] | random }}
+            call_no_random: 1

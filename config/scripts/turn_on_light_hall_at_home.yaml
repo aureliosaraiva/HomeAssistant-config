@@ -1,0 +1,9 @@
+turn_on_light_hall_at_home:
+  mode: queued
+  sequence:
+    - condition: and
+      conditions:
+        - condition: sun
+          after: sunset
+    - service: switch.turn_on
+      entity_id: switch.switch_wall_1_light_l2_hall

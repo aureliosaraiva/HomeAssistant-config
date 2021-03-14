@@ -1,0 +1,125 @@
+- alias: when_washing_machine_run
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.washing_machine_run
+      to: 'on'
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player:
+          - media_player.echo_dot_cozinha
+        custom_message: >
+          {{ [
+           "<emphasis level=\"moderate\">Oba</emphasis>, parece que vamos lavar roupas. <break time=\"1s\" />Adoro o cheiro de roupa limpa.",
+           "Detectei que a máquina de lavar roupa foi ligada.",
+           "Parece que temos roupas sujas para serem lavadas.",
+           "A máquina de lavar foi ligada, vou monitorar e te aviso quando terminar."
+           ] | random }}
+        call_no_announcement: 1
+        call_no_random: 1
+
+# - alias: when_washing_machine_washing
+#   initial_state: 'off'
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.washing_machine_washing
+#       from: 'off'
+#       to: 'on'
+#   action:
+#     - service: script.speech_engine
+#       data_template:
+#         media_player:
+#           - media_player.alexa_laboratory
+#- media_player.alexa_kitchen
+#         custom_message: >
+#           {{ [
+#            "A máquina de lavar roupas iniciou a lavagem."
+#            ] | random }}
+#         call_no_announcement: 1
+#
+# - alias: when_washing_machine_drain
+#   initial_state: 'off'
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.washing_machine_drain
+#       from: 'off'
+#       to: 'on'
+#   action:
+#     - service: script.speech_engine
+#       data_template:
+#         media_player:
+#           - media_player.alexa_laboratory
+#         custom_message: >
+#           {{ [
+#            "A máquina de lavar roupas está drenando a água."
+#            ] | random }}
+#         call_no_announcement: 1
+#
+- alias: when_washing_machine_rinse
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.washing_machine_rinse
+      to: 'on'
+      for: '00:02:00'
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player:
+          - media_player.echo_dot_cozinha
+        custom_message: >
+          {{ [
+           "Detectei que a máquina de lavar roupas vai começar a enxaguar.",
+           "A máquina de lavar roupas vai começar a enxaguar. Esse é o momento para adicionar amaciante.",
+           "Que tal deixar as roupas mais cheirosas? As roupas estão enxaguando, é o momento ideal para adicionar amaciante.",
+           "As roupas estão enxaguando. Você poderia me ajudar adicionando amaciante?",
+           "Você sabia que adicionar amaciante durante o enxaguar deixa as roupas mais cheirosas?",
+           "Desculpa incomodar, mas a máquina de lavar roupas começou a enxaguar.",
+           "Oi, estou passando pra avisar que a máquina está começando a enxaguar."
+           ] | random }}
+        call_no_announcement: 1
+        call_no_random: 1
+    # - wait_template: "{{ is_state('binary_sensor.motion_laundry_occupancy', 'off') }}"
+    #   timeout: '00:01:00'
+    #   continue_on_timeout: 'false'
+
+
+#
+# - alias: when_washing_machine_centrifughe
+#   initial_state: 'off'
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.washing_machine_centrifughe
+#       from: 'off'
+#       to: 'on'
+#   action:
+#     - service: script.speech_engine
+#       data_template:
+#         media_player:
+#           - media_player.alexa_laboratory
+#         custom_message: >
+#           {{ [
+#            "A máquina de lavar roupas vai começou a centrifugar."
+#            ] | random }}
+#         call_no_announcement: 1
+
+- alias: when_washing_machine_end
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.washing_machine_end
+      to: 'on'
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player:
+          - media_player.echo_dot_cozinha
+        custom_message: >
+          {{ [
+           "Detectei que a máquina de lavar roupas terminou de lavar.",
+           "Finalmente, todas as roupas estão limpas.",
+           "As roupas estão lavadas, você poderia me ajudar? Não tenho como estender as roupas no varal!",
+           "Finalmente, as roupas estão limpas. Agora você só precisa estender no varal.",
+           "Sinto cheiro de roupas limpas, a máquina de lavar terminou de lavar.",
+           "Desculpa incomodar, mais detectei que a máquina de lavar roupas terminou de lavar."
+           ] | random }}
+        call_no_announcement: 1
+        call_no_random: 1

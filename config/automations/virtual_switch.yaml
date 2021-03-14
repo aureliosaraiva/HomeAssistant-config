@@ -1,0 +1,103 @@
+#########################################################
+#
+# Acende luz da piscina (sonoff mini) através do botão central do interruptor
+#
+########################################################
+- id: turn_on_pool_lights_with_switch_wall_garden_center
+  alias: turn_on_pool_lights_with_switch_wall_garden_center
+  trigger:
+    - platform: state
+      entity_id: switch.switch_wall_garden_center
+      from: 'off'
+      to: 'on'
+  condition:
+  action:
+    - service: light.turn_on
+      entity_id: light.lamp_pool
+
+- id: turn_off_pool_lights_with_switch_wall_garden_center
+  alias: turn_off_pool_lights_with_switch_wall_garden_center
+  trigger:
+    - platform: state
+      entity_id: switch.switch_wall_garden_center
+      from: 'on'
+      to: 'off'
+  condition:
+  action:
+    - service: light.turn_off
+      entity_id: light.lamp_pool
+
+#########################################################
+#
+# Acende luz da cozinha no interruptor da sala
+#
+########################################################
+- id: turn_on_kitchen_light_switch_wall_livingroom
+  alias: turn_on_kitchen_light_switch_wall_livingroom
+  trigger:
+    - platform: state
+      entity_id: switch.switch_wall_livingroom_center
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: switch.switch_wall_livingroom_center
+      from: 'on'
+      to: 'off'
+  condition:
+  action:
+    - service: switch.toggle
+      entity_id: switch.switch_wall_kitchen_top
+
+#########################################################
+#
+# Acende luz da cozinha no interruptor da sala
+#
+########################################################
+- id: turn_on_socialroom_light_switch_wall_livingroom
+  alias: turn_on_socialroom_light_switch_wall_livingroom
+  trigger:
+    - platform: state
+      entity_id: switch.switch_wall_livingroom_bottom
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: switch.switch_wall_livingroom_bottom
+      from: 'on'
+      to: 'off'
+  condition:
+  action:
+    - service: switch.toggle
+      entity_id: switch.switch_wall_hall_2_l2_socialroom
+
+#########################################################
+#
+# Acende luz do abajur no interruptor do quarto
+#
+########################################################
+- id: turn_on_lamp_side_bed_with_switch_wall_bedroom_center
+  alias: turn_on_lamp_side_bed_with_switch_wall_bedroom_center
+  trigger:
+    - platform: state
+      entity_id: switch.switch_wall_bedroom_center
+      from: 'off'
+      to: 'on'
+  condition:
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.lamp_side_bed_aurelio
+        - light.lamp_side_bed_camila
+
+- id: turn_off_lamp_side_bed_with_switch_wall_bedroom_center
+  alias: turn_off_lamp_side_bed_with_switch_wall_bedroom_center
+  trigger:
+    - platform: state
+      entity_id: switch.switch_wall_bedroom_center
+      from: 'on'
+      to: 'off'
+  condition:
+  action:
+    - service: light.turn_off
+      entity_id:
+        - light.lamp_side_bed_aurelio
+        - light.lamp_side_bed_camila

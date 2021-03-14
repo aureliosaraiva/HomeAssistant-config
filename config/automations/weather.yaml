@@ -1,0 +1,45 @@
+- alias: sensor_turn_on_the_light_external
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.lumens_garden_illuminance_lux
+      below: 40
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.turn_on_the_light_external
+
+- alias: sensor_turn_off_the_light_external
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: "-01:00:00"
+    - platform: state
+      entity_id: input_boolean.sleep_mode
+      to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.turn_on_the_light_external
+
+- alias: sensor_turn_on_the_light_inside
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.lumens_garden_illuminance_lux
+      below: 40
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.turn_on_the_light_inside
+
+- alias: sensor_turn_off_the_light_inside
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: "-01:00:00"
+    - platform: state
+      entity_id: input_boolean.sleep_mode
+      to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.turn_on_the_light_inside
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.sleep_mode
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.turn_on_light_motion

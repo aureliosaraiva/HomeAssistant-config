@@ -1,0 +1,101 @@
+substitutions:
+  hostname: "PoolMachine"
+  ssid_ap: "HA_POW_PoolMachine"
+  versao: "1.0"
+
+esphome:
+  name: poolmachine
+  platform: ESP8266
+  board: esp01_1m
+  board_flash_mode: dout
+  esp8266_restore_from_flash: true
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  ap:
+    ssid: "$ssid_ap"
+    password: !secret AP_mode_pass
+
+
+captive_portal:
+
+logger:
+  baud_rate: 0
+
+# Enable Home Assistant API//
+api:
+
+ota:
+  password: !secret ota_pass
+
+uart:
+  rx_pin: RX
+  baud_rate: 4800
+
+time:
+  - platform: homeassistant
+    id: my_time
+
+sensor:
+  - platform: uptime
+    name: $hostname Uptime Sensor
+  - platform: wifi_signal
+    name: "$hostname WiFi Signal"
+    update_interval: 60s
+  - platform: cse7766
+    update_interval: 5s
+    current:
+      name: "$hostname Amperage"
+      unit_of_measurement: A
+    voltage:
+      name: "$hostname Voltage"
+      unit_of_measurement: V
+    power:
+      name: "$hostname Wattage"
+      unit_of_measurement: W
+      id: "power_Wattage"
+  - platform: total_daily_energy
+    name: "$hostname Total Daily Energy"
+    power_id: "power_Wattage"
+    filters:
+        # Multiplication factor from W to kW is 0.001
+        - multiply: 0.001
+    unit_of_measurement: kWh
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "$hostname Button"
+    internal: true
+    on_press:
+      - switch.toggle: relay
+  - platform: status
+    name: "$hostname Status"
+
+
+switch:
+  - platform: gpio
+    id: relay
+    pin: GPIO12
+    name: "$hostname Relay"
+
+output:
+  - platform: esp8266_pwm
+    id: pow_blue_led
+    pin:
+      number: GPIO13
+      inverted: True
+
+light:
+  - platform: monochromatic
+    name: "$hostname Blue LED"
+    output: pow_blue_led
+    id: led
+
+text_sensor:
+  - platform: version
+    name: "$hostname ESPHome Version $versao"

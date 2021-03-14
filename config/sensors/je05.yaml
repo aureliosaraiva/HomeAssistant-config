@@ -1,0 +1,268 @@
+#“VARMS”:0, → Valor de Tensão RMS da Fase A
+- platform: mqtt
+  name: "JE05 VRMS-A"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-v-circle-outline
+  unit_of_measurement: 'V'
+  value_template: '{{value_json.DATA.VARMS}}'
+#“VBRMS”:0, → Valor de Tensão RMS da Fase B
+- platform: mqtt
+  name: "JE05 VRMS-B"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-v-circle-outline
+  unit_of_measurement: 'V'
+  value_template: '{{value_json.DATA.VBRMS}}'
+#“VCRMS”:0, → Valor de Tensão RMS da Fase C
+- platform: mqtt
+  name: "JE05 VRMS-C"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-v-circle-outline
+  unit_of_measurement: 'V'
+  value_template: '{{value_json.DATA.VCRMS}}'
+#“IARMS”:0, → Valor de Corrente RMS da Fase A
+- platform: mqtt
+  name: "JE05 IRMS-A"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-a-circle-outline
+  unit_of_measurement: 'A'
+  value_template: '{{value_json.DATA.IARMS / 10 | float}}'
+#“IBRMS”:0, → Valor de Corrente RMS da Fase B
+- platform: mqtt
+  name: "JE05 IRMS-B"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-a-circle-outline
+  unit_of_measurement: 'A'
+  value_template: '{{value_json.DATA.IBRMS / 10 | float}}'
+#“ICRMS”:0, → Valor de Corrente RMS da Fase C
+- platform: mqtt
+  name: "JE05 IRMS-C"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-a-circle-outline
+  unit_of_measurement: 'A'
+  value_template: '{{value_json.DATA.ICRMS / 10 | float}}'
+#“VABRMS”:0, → Valor de Tensão RMS entre Fase A e B
+#“VBCRMS”:0, → Valor de Tensão RMS entre Fase B e C
+#“VCARMS”:0, → Valor de Tensão RMS entre Fase C e A
+#“VABCTRMS”:0, → Valor de Tensão RMS da linha Trifásica
+#“PA”:0, → Valor da potência ativa instantâneo da Fase A
+- platform: mqtt
+  name: "JE05 PATIVA-A"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'W'
+  value_template: '{{value_json.DATA.PA}}'
+#“PB”:0, → Valor da potência ativa instantâneo da Fase B
+- platform: mqtt
+  name: "JE05 PATIVA-B"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'W'
+  value_template: '{{value_json.DATA.PB}}'
+#“PC”:0, → Valor da potência ativa instantâneo da Fase C
+- platform: mqtt
+  name: "JE05 PATIVA-C"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'W'
+  value_template: '{{value_json.DATA.PC}}'
+#“PT”:0, → Valor da potência ativa instantâneo Total
+- platform: mqtt
+  name: "JE05 PATIVA-TOTAL"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'W'
+  value_template: '{{value_json.DATA.PT}}'
+#“QA”:0, → Valor da potência reativa instantâneo da Fase A
+- platform: mqtt
+  name: "JE05 PREATIVA-A"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'VAr'
+  value_template: '{{value_json.DATA.QA}}'
+#“QB”:0, → Valor da potência reativa instantâneo da Fase B
+- platform: mqtt
+  name: "JE05 PREATIVA-B"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'VAr'
+  value_template: '{{value_json.DATA.QB}}'
+#“QC”:0, → Valor da potência reativa instantâneo da Fase C
+- platform: mqtt
+  name: "JE05 PREATIVA-C"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'VAr'
+  value_template: '{{value_json.DATA.QC}}'
+#“QT”:0, → Valor da potência reativa instantâneo total
+- platform: mqtt
+  name: "JE05 PREATIVA-TOTAL"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'VAr'
+  value_template: '{{value_json.DATA.QT}}'
+#“SA”:0, → Valor da potência aparente instantâneo da Fase A
+- platform: mqtt
+  name: "JE05 PAPARENTE-A"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'VA'
+  value_template: '{{value_json.DATA.SA}}'
+#“SB”:0, → Valor da potência aparente instantâneo da Fase B
+- platform: mqtt
+  name: "JE05 PAPARENTE-B"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'VA'
+  value_template: '{{value_json.DATA.SB}}'
+#“SC”:0, → Valor da potência aparente instantâneo da Fase C
+- platform: mqtt
+  name: "JE05 PAPARENTE-C"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'VA'
+  value_template: '{{value_json.DATA.SC}}'
+#“ST”:0, → Valor da potência aparente instantâneo total
+- platform: mqtt
+  name: "JE05 PAPARENTE-TOTAL"
+  state_topic: "JE05/pub"
+  icon: mdi:flash
+  unit_of_measurement: 'VA'
+  value_template: '{{value_json.DATA.ST}}'
+#“FPA”:0, → Valor do fator de potência da Fase A
+- platform: mqtt
+  name: "JE05 FP-A"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-f-circle-outline
+  value_template: '{{value_json.DATA.FPA / 1000 | float}}'
+#“FPB”:0, → Valor do fator de potência da Fase B
+- platform: mqtt
+  name: "JE05 FP-B"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-f-circle-outline
+  value_template: '{{value_json.DATA.FPB / 1000 | float}}'
+#“FPC”:0, → Valor do fator de potência da Fase C
+- platform: mqtt
+  name: "JE05 FP-C"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-f-circle-outline
+  value_template: '{{value_json.DATA.FPC / 1000 | float}}'
+#“FPT”:0, → Valor do fator de potência total
+- platform: mqtt
+  name: "JE05 FP-TOTAL"
+  state_topic: "JE05/pub"
+  icon: mdi:alpha-f-circle-outline
+  value_template: '{{value_json.DATA.FPT / 1000 | float}}'
+#“KVARHA”:0, → Valor do consumo reativo acumulado da Fase A
+#  - platform: mqtt
+#    name: "JE05 KVARH-A"
+#    state_topic: "JE05/pub"
+#    icon: mdi:transmission-tower
+#    unit_of_measurement: 'kVAh'
+#    value_template: '{{value_json.DATA.KVARHA / 1000 | float}}'
+#“KVARHB”:0, → Valor do consumo reativo acumulado da Fase B
+#  - platform: mqtt
+#    name: "JE05 KVARH-B"
+#    state_topic: "JE05/pub"
+#    icon: mdi:transmission-tower
+#    unit_of_measurement: 'kVAh'
+#    value_template: '{{value_json.DATA.KVARHB / 1000 | float}}'
+#“KVARHC”:0, → Valor do consumo reativo acumulado da Fase C
+#  - platform: mqtt
+#    name: "JE05 KVARH-C"
+#    state_topic: "JE05/pub"
+#    icon: mdi:transmission-tower
+#    unit_of_measurement: 'kVAh'
+#    value_template: '{{value_json.DATA.KVARHC / 1000 | float}}'
+#“KVARHT”:0, → Valor do consumo reativo acumulado total
+#  - platform: mqtt
+#    name: "JE05 KVARH-TOTAL"
+#    state_topic: "JE05/pub"
+#    icon: mdi:transmission-tower
+#    unit_of_measurement: 'kVAh'
+#    value_template: '{{value_json.DATA.KVARHT / 1000 | float}}'
+#“KWHA”:0, → Valor do consumo ativo acumulado da Fase A
+- platform: mqtt
+  name: "JE05 KWH-A"
+  state_topic: "JE05/pub"
+  icon: mdi:transmission-tower
+  unit_of_measurement: 'kWh'
+  value_template: '{{value_json.DATA.KWHA / 1000 | float}}'
+#“KWHB”:0, → Valor do consumo ativo acumulado da Fase B
+- platform: mqtt
+  name: "JE05 KWH-B"
+  state_topic: "JE05/pub"
+  icon: mdi:transmission-tower
+  unit_of_measurement: 'kWh'
+  value_template: '{{value_json.DATA.KWHB / 1000 | float}}'
+#“KWHC”:0, → Valor do consumo ativo acumulado da Fase C
+- platform: mqtt
+  name: "JE05 KWH-C"
+  state_topic: "JE05/pub"
+  icon: mdi:transmission-tower
+  unit_of_measurement: 'kWh'
+  value_template: '{{value_json.DATA.KWHC / 1000 | float}}'
+#“KWHT”:0, → Valor do consumo ativo acumulado total
+- platform: mqtt
+  name: "JE05 KWH-TOTAL"
+  state_topic: "JE05/pub"
+  icon: mdi:transmission-tower
+  unit_of_measurement: 'kWh'
+  value_template: '{{value_json.DATA.KWHT / 1000 | float}}'
+#“FREQ”:0, → Frequência da linha trifásica
+- platform: mqtt
+  name: "JE05 Frequência"
+  state_topic: "JE05/pub"
+  icon: mdi:chart-bell-curve
+  unit_of_measurement: 'Hz'
+  value_template: '{{value_json.DATA.FREQ / 100 | float}}'
+#“TEMP”:0, → Valor da temperatura do DS18B20 (-354 = -35.4 °C)
+#“SERRS”:0, → Contador de erros de leitura do sensor DS18B20
+#“WRSSI”:0, → Nível de sinal wifi (-20 muito bom)(-90 muito ruim)
+- platform: mqtt
+  name: "JE05 WIFI"
+  state_topic: "JE05/pub"
+  icon: mdi:access-point-network
+  unit_of_measurement: 'dbm'
+  value_template: '{{value_json.DATA.WRSSI}}'
+#“UPTIME”:0 → Tempo em segundos em o produto está ligado
+#Calculo do Custo a partir do utility meter
+- platform: template
+  sensors:
+    energy_last_day:
+      icon_template: mdi:counter
+      unit_of_measurement: 'kWh'
+      value_template: "{{ ( float(states.sensor.energy_daily.attributes.last_period) ) | round(0) }}"
+    energy_last_week:
+      icon_template: mdi:counter
+      unit_of_measurement: 'kWh'
+      value_template: "{{ ( float(states.sensor.energy_weekly.attributes.last_period) ) | round(0) }}"
+    energy_last_month:
+      icon_template: mdi:counter
+      unit_of_measurement: 'kWh'
+      value_template: "{{ ( float(states.sensor.energy_monthly.attributes.last_period) ) | round(0) }}"
+
+    energy_cost_day:
+      icon_template: mdi:cash-usd
+      unit_of_measurement: 'R$'
+      value_template: "{{ ( float(states.sensor.energy_daily.state) * float(states.input_number.tarifa_kwh.state) ) | round(2) }}"
+    energy_cost_week:
+      icon_template: mdi:cash-usd
+      unit_of_measurement: 'R$'
+      value_template: "{{ ( float(states.sensor.energy_weekly.state) * float(states.input_number.tarifa_kwh.state) ) | round(2) }}"
+    energy_cost_month:
+      icon_template: mdi:cash-usd
+      unit_of_measurement: 'R$'
+      value_template: "{{ ( float(states.sensor.energy_monthly.state) * float(states.input_number.tarifa_kwh.state) ) | round(2) }}"
+
+    energy_cost_last_day:
+      icon_template: mdi:cash-usd
+      unit_of_measurement: 'R$'
+      value_template: "{{ ( float(states.sensor.energy_last_day.state) * float(states.input_number.tarifa_kwh.state) ) | round(2) }}"
+    energy_cost_last_week:
+      icon_template: mdi:cash-usd
+      unit_of_measurement: 'R$'
+      value_template: "{{ ( float(states.sensor.energy_last_week.state) * float(states.input_number.tarifa_kwh.state) ) | round(2) }}"
+    energy_cost_last_month:
+      icon_template: mdi:cash-usd
+      unit_of_measurement: 'R$'
+      value_template: "{{ ( float(states.sensor.energy_last_month.state) * float(states.input_number.tarifa_kwh.state) ) | round(2) }}"

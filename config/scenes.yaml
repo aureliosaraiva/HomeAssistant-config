@@ -1,0 +1,15 @@
+- name: mode_party
+  icon: mdi:drama-masks
+  entities:
+    light.lamps_center_livingroom:
+      state: on
+      brightness: 173
+      xy_color: [0.2485, 0.4647]
+    light.lamps_socialroom:
+      state: on
+      brightness: 173
+      xy_color: [0.167, 0.197]
+    light.lamp_spot_livingroom:
+      state: on
+      brightness: 250
+      xy_color: [0.205, 0.1]

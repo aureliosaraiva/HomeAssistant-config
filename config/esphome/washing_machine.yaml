@@ -1,0 +1,238 @@
+substitutions:
+  hostname: "Washing-Machine"
+  ssid_ap: "HA_POW_WashingMachine"
+  versao: "1.0"
+
+esphome:
+  name: washing_machine
+  platform: ESP8266
+  board: esp01_1m
+  board_flash_mode: dout
+  esp8266_restore_from_flash: true
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  ap:
+    ssid: "$ssid_ap"
+    password: !secret AP_mode_pass
+
+captive_portal:
+
+logger:
+  baud_rate: 0
+
+# Enable Home Assistant API//
+api:
+
+ota:
+  password: !secret ota_pass
+
+uart:
+  rx_pin: RX
+  baud_rate: 4800
+
+time:
+  - platform: homeassistant
+    id: my_time
+
+################################################################################
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "$hostname Button"
+    internal: true
+    on_press:
+      - switch.toggle: relay
+  - platform: status
+    name: "$hostname Status"
+
+################################################################################
+#                               Machine running                                #
+################################################################################
+  - platform: template
+    name: "$hostname RUN"
+    id: machine_running
+    filters:
+      - delayed_on: 5s # MINIMUM TIME TO AVOID FALSE POSITIVES
+      - delayed_off: 120s
+    lambda: |-
+      if (isnan(id(power).state)) {
+        return {};
+      } else if (id(power).state > 4) {
+        // Running
+        return true;
+      } else {
+        // Not running
+        if (id(machine_end).state) {
+          return false;
+        }
+        return {};
+      }
+    on_press:
+      then: # at cycle start i reset all binary sensors
+        - lambda: |-
+            {
+              id(machine_end).publish_state(false);
+              id(cycle_centrifughe).publish_state(false);
+              id(cycle_drain).publish_state(false);
+              id(cycle_rinse).publish_state(false);
+              id(cycle_washing).publish_state(false);
+            }
+        - light.turn_on: led
+
+
+################################################################################
+#                                Washing                                      #
+################################################################################
+  - platform: template
+    name: "$hostname WASHING"
+    id: cycle_washing
+    filters:
+      - delayed_on: 10s
+    # > 50W for 3s (washing cycle)
+    lambda: |-
+      if (isnan(id(power).state)) {
+        return {};
+      } else if ( id(machine_running).state && id(power).state > 40 ) {
+        // Running
+        return true;
+      } else {
+        // Not running (le due graffe significa che non fa nulla)
+        return {};
+      }
+
+################################################################################
+#                                DRAIN                                      #
+################################################################################
+  - platform: template
+    name: "$hostname DRAIN"
+    id: cycle_drain
+    filters:
+      - delayed_on: 10s
+    # > 50W for 3s (washing cycle)
+    lambda: |-
+      if (isnan(id(power).state)) {
+        return {};
+      } else if ((id(cycle_washing).state) && id(power).state > 20 && id(power).state < 40) {
+        // Running
+        return true;
+      } else {
+        // Not running (le due graffe significa che non fa nulla)
+        return {};
+      }
+
+
+
+################################################################################
+#                                Rinse                                      #
+################################################################################
+
+  - platform: template
+    name: "$hostname RINSE"
+    id: cycle_rinse
+    filters:
+      - delayed_on: 10s
+    lambda: |-
+      if (isnan(id(power).state)) {
+        return {};
+      } else if ((id(cycle_drain).state) && id(power).state > 4 && id(power).state < 10) {
+        // Running
+        return true;
+      } else {
+        // Not running (le due graffe significa che non fa nulla)
+        return {};
+      }
+
+################################################################################
+#                                Centrifuge                                    #
+################################################################################
+  - platform: template
+    name: "$hostname CENTRIFUGHE"
+    id: cycle_centrifughe
+    filters:
+      - delayed_on: 3s
+    # >< 90W-400W for 60s (centrifuge)
+    lambda: |-
+      if (isnan(id(power).state)) {
+        return {};
+      } else if ( (id(cycle_rinse).state) && (id(power).state > 500)){
+        // Running
+        return true;
+      } else {
+        // Not running (le due graffe significa che non fa nulla)
+        return {};
+      }
+
+################################################################################
+#                                 Machine end                                  #
+################################################################################
+  - platform: template
+    name: "$hostname END"
+    id: machine_end
+    lambda: |-
+      if (isnan(id(power).state)) {
+        return {};
+      } else if ( id(cycle_centrifughe).state && id(power).state < 1 ){
+        // Running
+        return true;
+      } else {
+        // Not running (le due graffe significa che non fa nulla)
+        return {};
+      }
+    on_press:
+      - light.turn_off: led
+
+################################################################################
+
+switch:
+  - platform: gpio
+    id: relay
+    pin: GPIO12
+    name: "$hostname Relay"
+
+output:
+  - platform: esp8266_pwm
+    id: pow_blue_led
+    pin:
+      number: GPIO13
+      inverted: True
+
+light:
+  - platform: monochromatic
+    name: "$hostname Blue LED"
+    internal: true
+    output: pow_blue_led
+    id: led
+
+sensor:
+  - platform: wifi_signal
+    name: "Sonoff POW WiFi Signal"
+    update_interval: 60s
+  - platform: uptime
+    name: "Sonoff POW Uptime"
+  - platform: cse7766
+    update_interval: 5s
+    current:
+      name: "$hostname Current"
+    voltage:
+      name: "$hostname Voltage"
+    power:
+      name: "$hostname Power"
+      id: power
+  - platform: total_daily_energy
+    name: "$hostname Total Daily Energy"
+    power_id: power
+    filters:
+        # Multiplication factor from W to kW is 0.001
+      - multiply: 0.001
+    unit_of_measurement: kWh
+    accuracy_decimals: 1
+
+text_sensor:
+  - platform: version
+    name: "$hostname ESPHome Version $versao"

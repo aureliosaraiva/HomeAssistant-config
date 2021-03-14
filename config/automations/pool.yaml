@@ -1,0 +1,52 @@
+- alias: pool_pump_on
+  trigger:
+    - platform: state
+      entity_id: input_select.pool_pump
+      to: 'On'
+  action:
+    service: switch.turn_on
+    entity_id: switch.poolmachine_relay
+
+- alias: pool_pump_off
+  trigger:
+    - platform: state
+      entity_id: input_select.pool_pump
+      to: 'Off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.poolmachine_relay
+
+- alias: pool_pump_check
+  trigger:
+    - platform: time_pattern
+      minutes: '/5'
+      seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: sunrise
+        after_offset: '-1:00:00'
+      - condition: sun
+        before: sunset
+        before_offset: '1:00:00'
+  action:
+    service: pool_pump_service.check
+    data:
+      switch_entity_id: switch.poolmachine_relay
+
+- alias: pool_pump_report
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '00:30:00'
+  action:
+    service: notify.AURELIO
+    data_template:
+      message: >
+        Pool Pump Report: Pool Pump was on for {{states.sensor.pool_pump_running_today.attributes.value }} / {{ states.sensor.pool_pump_liter_today.state }} L today.
+        ({%- if is_state('input_boolean.swimming_season', 'on') -%}
+          Swimming Season / {{ states.input_number.run_pool_pump_hours_swimming_season.state | round(0) }}h
+        {%- else -%}
+          Off Season / {{ states.input_number.run_pool_pump_hours_off_season.state | round(0) }}h
+        {%- endif -%}).

@@ -1,0 +1,33 @@
+alex_set_volume:
+  mode: queued
+  sequence:
+    - condition: and
+      conditions:
+        - condition: template
+          value_template: "{{ media_player != null }}"
+        - condition: template
+          value_template: >-
+            {% set current_volume=state_attr(media_player, "volume_level") %}
+
+            {%- if now().strftime('%H')|int < 12 and now().strftime('%H')|int > 6 -%}
+              {%- set next_volume=0.3 -%}
+            {%- elif now().strftime('%H')|int > 12 and now().strftime('%H')|int < 20 -%}
+              {%- set next_volume=0.5 -%}
+            {%- else -%}
+              {%- set next_volume=0.3 -%}
+            {%- endif -%}
+
+            {{ current_volume!=next_volume }}
+    - service: media_player.volume_set
+      data_template:
+       entity_id: >
+         {{ media_player }}
+       volume_level: >-
+         {% if now().strftime('%H')|int < 12 and now().strftime('%H')|int > 6 %}
+           0.3
+         {% elif now().strftime('%H')|int > 12 and now().strftime('%H')|int < 20 %}
+           0.5
+         {% else %}
+           0.3
+         {% endif %}
+    - delay: 1

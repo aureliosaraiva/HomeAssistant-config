@@ -1,0 +1,12 @@
+- platform: template
+  sensors:
+    home_mode:
+      friendly_name: "Status da casa"
+      value_template: >
+          {%- if is_state('input_boolean.away_mode', 'on') -%}
+            Modo Ausente
+          {%- elif is_state('input_boolean.away_mode', 'off')  -%}
+            Em Casa
+          {%- else -%}
+            Modo N/D
+          {%- endif %}

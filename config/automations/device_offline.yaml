@@ -1,0 +1,40 @@
+- alias: unavailable_device
+  trigger:
+    - platform: time
+      at: '09:00:00'
+    - platform: time
+      at: '21:00:00'
+  action:
+    - service: notify.AURELIO
+      data_template:
+        message: >
+          *Dispositivos offline*{{"\n\n"}}
+
+          {% for state in expand("group.devices_battery") -%}
+            {%- if state.attributes.battery and state.attributes.last_seen %}
+              {%- if as_timestamp(now()) - as_timestamp(state.attributes.last_seen) > (12 * 60 * 60)  -%}
+               {{state.entity_id.replace('_','\_')}} - {{ state.attributes.last_seen }} {{"\n"}}
+              {%- endif -%}
+            {%- elif state.attributes.battery and not state.attributes.last_seen-%}
+              {{state.entity_id.replace('_','\_')}} - N/D {{"\n"}}
+            {%- endif -%}
+          {%- endfor %}
+
+- alias: unavailable_esphome_device
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.poolmachine_status
+        - binary_sensor.switch_bedside_01_status
+        - binary_sensor.switch_bedside_02_status
+        - binary_sensor.rain_water_level_status
+        - binary_sensor.washing_machine_status
+      from: 'on'
+      to: 'unavailable'
+      for: '00:00:30'
+  action:
+    - service: notify.AURELIO
+      data_template:
+        message: >
+          {% set friendly_name = state_attr(trigger.entity_id, "friendly_name")%}
+          Dispositivo ESPHome offline: {{friendly_name}}

@@ -1,0 +1,35 @@
+- platform: mqtt
+  schema: json
+  name: lamps_center_livingroom
+  command_topic: "zigbee2mqtt/lamps_center_livingroom/set"
+  state_topic: "zigbee2mqtt/lamps_center_livingroom"
+  color_temp: true
+  brightness: true
+  rgb: true
+
+- platform: mqtt
+  schema: json
+  name: lamps_socialroom
+  command_topic: "zigbee2mqtt/lamps_socialroom/set"
+  state_topic: "zigbee2mqtt/lamps_socialroom"
+  color_temp: true
+  brightness: true
+  rgb: true
+
+- platform: mqtt
+  schema: json
+  name: lamps_closet
+  command_topic: "zigbee2mqtt/lamps_closet/set"
+  state_topic: "zigbee2mqtt/lamps_closet"
+  color_temp: true
+  brightness: true
+  rgb: true
+
+- platform: mqtt
+  schema: json
+  name: lamps_bedroom
+  command_topic: "zigbee2mqtt/lamps_bedroom/set"
+  state_topic: "zigbee2mqtt/lamps_bedroom"
+  color_temp: true
+  brightness: true
+  rgb: true

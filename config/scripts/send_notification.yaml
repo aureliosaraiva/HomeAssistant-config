@@ -1,0 +1,11 @@
+send_notification:
+  sequence:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: input_boolean.text_notifications
+          state: 'on'
+    - service: notify.AURELIO
+      data:
+        message: >
+          {{message}}

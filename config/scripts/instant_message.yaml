@@ -1,0 +1,8 @@
+instant_message:
+  sequence:
+  - service: notify.alexa_media
+    data_template:
+       target: "{{ states('input_select.message_target') }}"
+       data:
+         type: announce
+       message: "{{ states('input_text.text1') }}"

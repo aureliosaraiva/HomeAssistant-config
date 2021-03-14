@@ -1,0 +1,72 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant:stable
+    volumes:
+      - /home/aureliosaraiva/homeassistant/config:/config
+    environment:
+      - TZ=Brazil/East
+    restart: on-failure
+    network_mode: host
+    # ports:
+    #   - 8123:8123
+    depends_on:
+      - mqtt
+    healthcheck:
+      test: ["CMD", "curl", "-f", "[REDACTED]"]
+      interval: 30s
+      timeout: 10s
+      retries: 6
+  mqtt:
+      container_name: mqtt
+      image: eclipse-mosquitto:1.6
+      # ports:
+      #   - "1883:1883"
+      #   - "9001:9001"
+      restart: on-failure
+      network_mode: host
+      volumes:
+        - /home/aureliosaraiva/homeassistant/mqtt/config:/mosquitto/config
+        - /home/aureliosaraiva/homeassistant/mqtt/data:/mosquitto/data
+        - /home/aureliosaraiva/homeassistant/mqtt/log:/mosquitto/log
+      environment:
+        - TZ=Brazil/East
+  zigbee2mqtt:
+      container_name: zigbee2mqtt
+      image: koenkk/zigbee2mqtt:latest
+      volumes:
+        - /home/aureliosaraiva/homeassistant/config/zigbee2mqtt:/app/data
+        - /run/udev:/run/udev:ro
+      devices:
+        - /dev/ttyACM0:/dev/ttyACM0
+      restart: on-failure
+      # ports:
+      #   - "8080:8080"
+      network_mode: host
+      privileged: true
+      environment:
+        - TZ=Brazil/East
+  esphome:
+    image: esphome/esphome:latest
+    container_name: esphome
+    restart: on-failure
+    network_mode: host
+    # ports:
+    #   - 6052:6052
+    #   - 6123:6123
+    volumes:
+      - /home/aureliosaraiva/homeassistant/config/esphome:/config
+    environment:
+      - TZ=Brazil/East
+  # nodered:
+  #   container_name: node-red
+  #   image: nodered/node-red
+  #   volumes:
+  #     - /home/aureliosaraiva/homeassistant/node-red:/data
+  #   ports:
+  #     - 1880:1880
+  #   restart: always
+  #   user: 1000:1000
+  #   environment:
+  #     - TZ=Brazil/East

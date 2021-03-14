@@ -1,0 +1,9 @@
+turn_off_sleep_home:
+  sequence:
+    - service: script.speech_engine
+      data_template:
+        custom_message: >
+          {{ [
+           "Iniciando modo noturno. Estou apagando todas as luzes e verificando portas e janelas!"
+           ] | random }}
+    

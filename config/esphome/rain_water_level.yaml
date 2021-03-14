@@ -1,0 +1,57 @@
+substitutions:
+  hostname: "rain_water_level"
+  ssid_ap: "rain_water_level"
+  versao: "1.0"
+
+esphome:
+  name: rain_water_level
+  platform: ESP8266
+  board: nodemcuv2
+  esp8266_restore_from_flash: true
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  ap:
+    ssid: "$ssid_ap"
+    password: !secret AP_mode_pass
+
+# mqtt:
+  # broker: 192.168.68.109
+
+captive_portal:
+
+
+logger:
+  baud_rate: 0
+
+# Enable Home Assistant API//
+api:
+
+ota:
+  password: !secret ota_pass
+
+time:
+  - platform: homeassistant
+    id: my_time
+
+binary_sensor:
+  - platform: status
+    name: "$hostname Status"
+  - platform: gpio
+    pin:
+      number: D1
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "$hostname digital"
+
+sensor:
+  - platform: uptime
+    name: $hostname Uptime Sensor
+  - platform: wifi_signal
+    name: "$hostname WiFi Signal"
+    update_interval: 60s
+  - platform: adc
+    pin: A0
+    name: "$hostname analogica"
+    update_interval: 60s
