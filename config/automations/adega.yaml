@@ -1,0 +1,47 @@
+- alias: when_the_door_of_adega_is_opened
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_adega_contact
+      from: 'off'
+      to: 'on'
+      for: '00:00:10'
+  action:
+    - service: script.speech_engine
+      data_template:
+        custom_message: >
+          {{ [
+           "Detectei que a porta da adega está aberta. Por favor feche a porta.",
+           "Não consigo manter a temperatura da adega com a porta aberta. Por favor feche.",
+           "Por favor, feche a porta da adega, tenho vinhos valiosos.",
+           "Por favor, tenha respeito pelos vinhos, eles gostam de baixas temperaturas. Por favor feche.",
+           "Olá humano, preciso de uma ajuda. Consegue fechar a porta da adega para mim?",
+           "A temperatura da adega vai começar a subir se a porta não estiver fechada."
+           ] | random }}
+        call_no_random: 1
+    - service: automation.turn_on
+      entity_id: automation.when_the_door_of_adega_is_closed
+
+- alias: when_the_door_of_adega_is_closed
+  initial_state: 'off'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_adega_contact
+      from: 'on'
+      to: 'off'
+      for: '00:00:03'
+  action:
+    - service: script.speech_engine
+      data_template:
+        custom_message: >
+          {{ [
+           "Obrigada por fechar.",
+           "Obrigada.",
+           "Porta fechada, obrigada.",
+           "Obrigada, vou ajustar a temperatura dos vinhos.",
+           "Obrigada, agora consigo manter a temperatura dos vinhos.",
+           "A temperatura da adega vai começar a subir, se a porta não estiver fechada.",
+           "Obrigada, meus vinhos estão salvos."
+           ] | random }}
+        call_no_random: 1
+    - service: automation.turn_off
+      entity_id: automation.when_the_door_of_adega_is_closed

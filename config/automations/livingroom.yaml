@@ -1,0 +1,30 @@
+- id: turn_on_the_light_livingroom_with_lux_below_15
+  alias: turn_on_the_light_livingroom_with_lux_below_15
+  description: >
+    Liga a luz da sala automaticamente quando começar a escurecer.
+  trigger:
+    - platform: state
+      entity_id: input_boolean.turn_on_the_light_external
+      from: 'off'
+      to: 'on'
+    - platform: homeassistant
+      event: start
+    - platform: event
+      event_type: automation_reloaded
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: input_boolean.turn_on_the_light_external
+          state: 'on'
+        - condition: state
+          entity_id: input_boolean.away_mode
+          state: 'off'
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.switch_wall_livingroom_top
+        - switch.circadian_lighting_circadian_lighting_livingroom
+    - wait_template: "{{ is_state('switch.switch_wall_livingroom_top', 'on') }}"
+    - service: light.turn_on
+      entity_id: light.lamps_center_livingroom

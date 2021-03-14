@@ -1,0 +1,43 @@
+# inspiração: https://github.com/CCOSTAN/Home-AssistantConfig/blob/master/config/script/speech_engine.yaml
+
+######################################################################################################
+###Script to send notifications to the ChromeCast Audios during normal hours and only when we are home! Call like this:
+  # action:
+    # service: script.speech_engine
+    # data:
+    #   call_no_announcement:
+    #   call_dark_outside:
+    #   call_window_check:
+    #   call_garage_check:
+    #   call_responsibilities
+    #   call_light_check
+    #   call_inside_weather
+    #   call_outside_weather
+# # @CCOSTAN
+# Original Repo : https://github.com/CCOSTAN/Home-AssistantConfig
+######################################################################################################
+
+
+speech_engine:
+  sequence:
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: group.family
+          state: 'home'
+    - service: script.speech_processing
+      data_template:
+        media_player: >-
+            {% if media_player | length == 0 %}
+              {% set media_player = [
+                'media_player.echo_sala'
+              ] %}
+            {% endif %}
+
+            {% if media_player is not string and media_player is sequence %}
+              {% set media_player = media_player|join(', ') %}
+            {% endif %}
+
+            {{ media_player }}
+
+        speech_message: !include ../templates/speech/briefing.yaml

@@ -1,0 +1,13 @@
+- platform: history_stats
+  name: Pool Pump running today
+  entity_id: binary_sensor.pool_pump_running
+  state: 'on'
+  type: time
+  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+  end: '{{ now() }}'
+- platform: template
+  sensors:
+    pool_pump_liter_today:
+      icon_template: mdi:counter
+      unit_of_measurement: 'L'
+      value_template: "{{ ((states.sensor.pool_pump_running_today.state | float * 60) * (8490/60)) | round(0) }}"

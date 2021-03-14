@@ -1,0 +1,34 @@
+- alias: when_rain
+  id: when_rain
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.rain_water_level_digital
+      from: 'off'
+      to: 'on'
+    - platform: homeassistant
+      event: start
+    - platform: event
+      event_type: automation_reloaded
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: binary_sensor.rain_water_level_digital
+          state: 'on'
+  action:
+    - service: notify.AURELIO
+      data_template:
+        message: "Começou a chover em casa!"
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - service: script.speech_engine
+      data_template:
+        media_player: media_player.echo_sala
+        custom_message: >
+          {{ [
+           "Identifiquei começou a chover.",
+           "Está chovendo!",
+           "Foi detectado que está chovendo."
+           ] | random }}

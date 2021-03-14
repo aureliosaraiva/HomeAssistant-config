@@ -1,0 +1,39 @@
+######################################################################################################
+###Script to actually send notifications to the ChromeCast Audios during normal hours and only when we are home! Call like this:
+  # action:
+    # service: script.speech_engine
+    # speech_message:
+# # @CCOSTAN
+# Original Repo : https://github.com/CCOSTAN/Home-AssistantConfig
+######################################################################################################
+
+
+speech_processing:
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: 'polly/lastmsg'
+        payload: "{{ now().strftime('%-I') }}:{{ now().strftime('%M') }} {{ now().strftime('%p') }}. {{ speech_message | truncate(220)}}"
+        retain: true
+    - condition: and
+      conditions:
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: group.family
+              state: 'home'
+        - condition: state
+          entity_id: input_boolean.speech_notifications
+          state: 'on'
+    - service: script.alex_set_volume
+      data:
+        media_player: >
+          {{ media_player }}
+    - service: notify.alexa_media
+      data_template:
+        target: >
+          {{ media_player }}
+        data:
+          type: announce
+        message: >
+          {{ speech_message }}

@@ -1,0 +1,49 @@
+
+- alias: Home Assistant Started
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: notify.AURELIO
+      data:
+        message: >
+          HomeAssistant online
+    - service: script.speech_engine
+      data_template:
+        media_player: media_player.echo_laboratory
+        custom_message: >
+          {{ [
+           "Estou online novamente ou ativar os sensores!",
+           "Pronto! Estou aqui novamente!",
+           "Parece que voltei a vida. Vou monitorar a casa.",
+           "Finalmente meus sistemas estão on-line novamente.",
+           "Estou iniciando meus sistemas. Só um momento."
+           ] | random }}
+
+
+
+- alias: Home Assistant update_interval
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.updater
+      from: 'off'
+      to: 'on'
+    - platform: homeassistant
+      event: start
+    - platform: event
+      event_type: automation_reloaded
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: binary_sensor.updater
+          state: 'on'
+  action:
+    - service: notify.AURELIO
+      data:
+        message: >
+          *HA: Nova atualização* {{"\n"}}
+          Release Note: {{states.binary_sensor.updater.attributes.release_notes}}{{"\n"}}
+          Version: {{states.binary_sensor.updater.attributes.newest_version}}

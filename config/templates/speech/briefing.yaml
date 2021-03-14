@@ -1,0 +1,44 @@
+  >-
+
+  {%- macro iss() -%}
+  {% if is_state('binary_sensor.iss', 'on') -%}
+      <break time="1s" />Ha, mais uma coisa, <break time="1s" /> 
+      Tenho algo interessante. A estação espacial internacional está acima de nós agora. Existem {{states.binary_sensor.iss.attributes ['number_of_people_in_space']}} pessoas no espaço agora.
+  {% endif -%}
+  {%- endmacro -%}
+
+  {%- macro moon() -%}
+    {% if states.sensor.moon.state == 'full_moon' %}
+      <break time="1s" />Ha, mais uma coisa, <break time="1s" />
+      {{ [
+          "é lua cheia hoje à noite!",
+          "é lua cheia.",
+          "sabia que a lua esta enorme hoje a noite! É lua cheia.",
+          "é lua cheia hoje, dia perfeito para energização!",
+          "Se você quer ver a lua cheia! É hoje a noite."
+      ] | random }}
+    {% elif states.sensor.moon.state == 'new_moon' %}
+      <break time="1s" />Ha, mais uma coisa, <break time="1s" />
+      {{ [
+        "Confira a lua nova hoje à noite!",
+        "Ei, olhe, há lua nova hoje.",
+        "A lua ainda esta pequena. Confira a lua nova."
+      ] | random }}
+
+    {% elif states.sensor.moon.state == 'waning_gibbous' %}
+      <break time="1s" />Ha, mais uma coisa, <break time="1s" />
+      {{ [
+        "você sabia que é lua minguante hoje à noite?",
+        "a lua está minguante hoje!",
+        "<emphasis level=\"moderate\">nossa</emphasis> a lua esta bem fininha hoje."
+      ] | random }}
+    {% endif %}
+  {%- endmacro -%}
+  <speak>
+
+    <p>{{ custom_message }}</p>
+
+    {% if call_no_random != 1 %}
+    <p>{{ ([moon, iss]|random)() }}</p>
+    {% endif %}
+  </speak>

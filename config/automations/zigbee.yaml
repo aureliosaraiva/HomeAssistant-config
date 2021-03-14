@@ -1,0 +1,55 @@
+- alias: Zigbee2MQTT Log Level
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: input_select.zigbee2mqtt_log_level
+  action:
+    - service: mqtt.publish
+      data:
+        payload_template: "{{ states('input_select.zigbee2mqtt_log_level') }}"
+        topic: zigbee2mqtt/bridge/request/config/log_level
+# Automation to start timer when enable join is turned on
+- id: zigbee_join_enabled
+  alias: Zigbee Join Enabled
+  trigger:
+    platform: state
+    entity_id: switch.zigbee2mqtt_main_join
+    to: "on"
+  action:
+    service: timer.start
+    entity_id: timer.zigbee_permit_join
+    data_template:
+      duration: "{{ '00:0%i:00' % (states('input_number.zigbee2mqtt_join_minutes') | int ) }}"
+# Automation to stop timer when switch turned off and turn off switch when timer finished
+- id: zigbee_join_disabled
+  alias: Zigbee Join Disabled
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.zigbee_permit_join
+    - platform: state
+      entity_id: switch.zigbee2mqtt_main_join
+      to: "off"
+  action:
+    - service: timer.cancel
+      data:
+        entity_id: timer.zigbee_permit_join
+    - service: switch.turn_off
+      entity_id: switch.zigbee2mqtt_main_join
+- id: "zigbee2mqtt_create_notification_on_successfull_interview"
+  alias: Zigbee Device Joined Notification
+  trigger:
+    platform: mqtt
+    topic: 'zigbee2mqtt/bridge/event'
+  condition:
+    condition: template
+    value_template: '{{trigger.payload_json.type == "device_interview" and trigger.payload_json.data.status == "successful" and trigger.payload_json.data.supported}}'
+  action:
+    - service: persistent_notification.create
+      data_template:
+        title: Device joined the Zigbee2MQTT network
+        message: "Name: {{trigger.payload_json.data.friendly_name}},
+                  Vendor: {{trigger.payload_json.data.definition.vendor}},
+                  Model: {{trigger.payload_json.data.definition.model}},
+                  Description: {{trigger.payload_json.data.definition.description}}"

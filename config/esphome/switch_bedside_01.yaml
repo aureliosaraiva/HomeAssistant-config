@@ -1,0 +1,71 @@
+substitutions:
+  hostname: "switch_bedside_01"
+  ssid_ap: "switch_bedside_01"
+  versao: "1.0"
+
+esphome:
+  name: switch_bedside_01
+  platform: ESP8266
+  board: esp01_1m
+  board_flash_mode: dout
+  esp8266_restore_from_flash: true
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  ap:
+    ssid: "$ssid_ap"
+    password: !secret AP_mode_pass
+
+captive_portal:
+
+logger:
+  baud_rate: 0
+
+# Enable Home Assistant API//
+api:
+
+ota:
+  password: !secret ota_pass
+
+uart:
+  rx_pin: RX
+  baud_rate: 4800
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "$hostname touch top"
+    id: button_1
+  - platform: gpio
+    pin:
+      number: GPIO9
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "$hostname touch center"
+    id: button_2
+  - platform: gpio
+    pin:
+      number: GPIO10
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "$hostname touch bottom"
+    id: button_3
+  - platform: status
+    name: "$hostname Status"
+
+output:
+  # Register the blue LED as a dimmable output ....
+  - platform: esp8266_pwm
+    id: blue_led
+    pin: GPIO13
+    inverted: True
+
+light:
+  # ... and then make a light out of it.
+  - platform: monochromatic
+    name: "$hostname LED"
+    output: blue_led

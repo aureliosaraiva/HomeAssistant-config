@@ -1,0 +1,47 @@
+family:
+  entities:
+    - sensor.tracker_aurelio
+    - sensor.tracker_camila
+
+windows:
+  icon: mdi:window-open-variant
+  entities:
+    - binary_sensor.window_livingroom_1_contact
+    - binary_sensor.window_livingroom_2_contact
+    - binary_sensor.window_kitchen_contact
+    - binary_sensor.window_laundry_contact
+
+doors:
+  icon: mdi:door
+  entities:
+    - binary_sensor.door_garden_contact
+    - binary_sensor.door_laundry_contact
+    - binary_sensor.door_hall_contact
+
+devices_battery:
+  entities:
+    - sensor.button_cenes_battery
+    - sensor.cubo_battery
+    - sensor.door_adega_battery
+    - sensor.door_fridge_battery
+    - sensor.door_garden_battery
+    - sensor.door_hall_battery
+    - sensor.door_laundry_battery
+    - sensor.lumens_garden_battery 
+    - sensor.motion_hall_battery
+    - sensor.motion_hall_stairs_battery
+    - sensor.motion_laundry_battery
+    - sensor.motion_livingroom_1_battery
+    - sensor.motion_side_external_1_battery
+    - sensor.motion_side_external_2_battery
+    - sensor.motion_side_external_garage_battery
+    - sensor.motion_side_external_laundry_1_battery
+    - sensor.motion_stairs_battery
+    - sensor.weather_bathroom_battery
+    - sensor.weather_bedroom_battery
+    - sensor.weather_bedroom_guest_1_battery
+    - sensor.weather_laboratory_battery
+    - sensor.window_kitchen_battery
+    - sensor.window_laundry_battery
+    - sensor.window_livingroom_1_battery
+    - sensor.window_livingroom_2_battery
