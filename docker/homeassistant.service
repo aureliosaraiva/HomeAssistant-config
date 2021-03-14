@@ -1,0 +1,14 @@
+[Unit]
+Description=Home Assistant
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+RestartSec=3
+WorkingDirectory=/root/homeassistant
+ExecStart=/usr/local/bin/docker-compose up --remove-orphans
+ExecStop=/usr/local/bin/docker-compose down
+
+[Install]
+WantedBy=multi-user.target
