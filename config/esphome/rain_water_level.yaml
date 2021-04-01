@@ -7,7 +7,7 @@ esphome:
   name: rain_water_level
   platform: ESP8266
   board: nodemcuv2
-  esp8266_restore_from_flash: true
+  esp8266_restore_from_flash: false
 
 wifi:
   ssid: !secret wifi_ssid

@@ -17,6 +17,7 @@ binary_sensor: !include binary_sensor.yaml
 script: !include_dir_merge_named scripts
 scene: !include scenes.yaml
 light: !include light.yaml
+utility_meter: !include utility_meter.yaml
 
 logger:
   default: warn
@@ -155,92 +156,6 @@ input_boolean:
 
 ############## JE05 ############################
 
-utility_meter:
-#Monitora o consumo de energia mensal
-  energy_watts_daily:
-    source: sensor.je05_pativa_total
-    cycle: daily
-    offset: '00:00:00'
-  energy_watts_weekly:
-    source: sensor.je05_pativa_total
-    cycle: weekly
-  energy_watts_monthly:
-    source: sensor.je05_pativa_total
-    cycle: monthly
-    offset:
-      days: 1
-      hours: 0
-      minutes: 0
-  energy_daily:
-    source: sensor.je05_kwh_total
-    cycle: daily
-    offset: '00:00:00'
-  energy_weekly:
-    source: sensor.je05_kwh_total
-    cycle: weekly
-  energy_monthly:
-    source: sensor.je05_kwh_total
-    cycle: monthly
-    offset:
-      days: 1
-      hours: 0
-      minutes: 0
-  energy_pool_machine_daily:
-    source: sensor.poolmachine_total_daily_energy
-    cycle: daily
-    offset: '00:00:00'
-  energy_pool_machine_weekly:
-    source: sensor.poolmachine_total_daily_energy
-    cycle: weekly
-  energy_pool_machine_monthly:
-    source: sensor.poolmachine_total_daily_energy
-    cycle: monthly
-    offset:
-      days: 1
-      hours: 0
-      minutes: 0
-  energy_watts_pool_machine_daily:
-    source: sensor.poolmachine_wattage
-    cycle: daily
-    offset: '00:00:00'
-  energy_watts_pool_machine_weekly:
-    source: sensor.poolmachine_wattage
-    cycle: weekly
-  energy_watts_pool_machine_monthly:
-    source: sensor.poolmachine_wattage
-    cycle: monthly
-    offset:
-      days: 1
-      hours: 0
-      minutes: 0
-  energy_washing_machine_daily:
-    source: sensor.washing_machine_total_daily_energy
-    cycle: daily
-    offset: '00:00:00'
-  energy_washing_machine_weekly:
-    source: sensor.washing_machine_total_daily_energy
-    cycle: weekly
-  energy_washing_machine_monthly:
-    source: sensor.washing_machine_total_daily_energy
-    cycle: monthly
-    offset:
-      days: 1
-      hours: 0
-      minutes: 0
-  energy_watts_washing_machine_daily:
-    source: sensor.washing_machine_power
-    cycle: daily
-    offset: '00:00:00'
-  energy_watts_washing_machine_weekly:
-    source: sensor.washing_machine_power
-    cycle: weekly
-  energy_watts_washing_machine_monthly:
-    source: sensor.washing_machine_power
-    cycle: monthly
-    offset:
-      days: 1
-      hours: 0
-      minutes: 0
 
 switch:
   - platform: mqtt
@@ -514,6 +429,9 @@ notify:
   - platform: telegram
     name: AURELIO
     chat_id: 611383381
+  - platform: telegram
+    name: CAMILA
+    chat_id: 1656225164
 
 cloud:
   google_actions:
@@ -545,8 +463,13 @@ cloud:
         - switch.switch_wall_bedroom_top
         - sensor.weather_bedroom_temperature
         - switch.plug_fan
+        - switch.switch_wall_laboratory_top
     # https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-discovery.html#display-categories
     entity_config:
+      switch.switch_wall_laboratory_top:
+        name: Luz
+        description: Luz
+        display_categories: LIGHT
       switch.plug_fan:
         name: Ventilador
         description: Ventilador
@@ -579,7 +502,6 @@ cloud:
         name: Temperatura do quarto
         description: Temperatura do quarto
         display_categories: TEMPERATURE_SENSOR
-
 
 alarm_control_panel:
   - platform: manual

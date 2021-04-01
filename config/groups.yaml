@@ -1,3 +1,9 @@
+balizador:
+  icon: hass:lightbulb
+  entities:
+    - switch.switch_side_hall
+    - switch.switch_side_stairs
+
 family:
   entities:
     - sensor.tracker_aurelio
@@ -27,11 +33,11 @@ devices_battery:
     - sensor.door_garden_battery
     - sensor.door_hall_battery
     - sensor.door_laundry_battery
-    - sensor.lumens_garden_battery 
+    - sensor.lumens_garden_battery
     - sensor.motion_hall_battery
     - sensor.motion_hall_stairs_battery
     - sensor.motion_laundry_battery
-    - sensor.motion_livingroom_1_battery
+    - sensor.motion_closet_battery
     - sensor.motion_side_external_1_battery
     - sensor.motion_side_external_2_battery
     - sensor.motion_side_external_garage_battery
@@ -45,3 +51,4 @@ devices_battery:
     - sensor.window_laundry_battery
     - sensor.window_livingroom_1_battery
     - sensor.window_livingroom_2_battery
+    - sensor.door_closet_battery

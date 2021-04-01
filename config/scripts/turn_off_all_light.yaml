@@ -3,8 +3,8 @@ turn_off_other_light:
   sequence:
     - service: switch.turn_off
       entity_id:
-        - switch.switch_side_ligth_hall
-        - switch.switch_side_ligth_stairs
+        - switch.switch_side_hall
+        - switch.switch_side_stairs
 
         - switch.switch_wall_garden_top
         # virtual switch light pool
@@ -18,11 +18,6 @@ turn_off_other_light:
         - switch.switch_wall_laundry_top
         - switch.switch_wall_laundry_center
         - switch.switch_wall_laundry_bottom
-
-        - switch.switch_wall_livingroom_top
-        # Virtual switch switch.switch_wall_kitchen_top
-        # - switch.switch_wall_livingroom_center
-        - switch.switch_wall_livingroom_bottom
 
         # - switch.switch_wall_closet_top
         - switch.switch_wall_closet_center
@@ -71,6 +66,7 @@ turn_off_other_light:
         - switch.switch_wall_hall_2_l3_external_side
         # spot socialroom
         - switch.switch_wall_hall_2_l4_spot
+
     - service: light.turn_off
       entity_id:
         # - light.lamp_side_bed_aurelio÷\

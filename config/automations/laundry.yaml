@@ -15,11 +15,11 @@
           entity_id: input_boolean.turn_on_the_light_external
           state: 'on'
         - condition: state
-          entity_id: switch.switch_wall_laundry_center
+          entity_id: switch.switch_wall_laundry_bottom
           state: 'off'
   action:
     - service: switch.turn_on
-      entity_id: switch.switch_wall_laundry_center
+      entity_id: switch.switch_wall_laundry_bottom
     - service: automation.turn_on
       entity_id: automation.turn_off_the_light_external_laundry_2
 
@@ -35,7 +35,7 @@
   condition:
   action:
     - service: switch.turn_off
-      entity_id: switch.switch_wall_laundry_center
+      entity_id: switch.switch_wall_laundry_bottom
     - service: automation.turn_off
       entity_id: automation.turn_off_the_light_external_laundry_2
 

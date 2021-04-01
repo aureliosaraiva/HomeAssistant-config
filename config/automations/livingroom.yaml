@@ -22,9 +22,6 @@
           state: 'off'
   action:
     - service: switch.turn_on
-      entity_id:
-        - switch.switch_wall_livingroom_top
-        - switch.circadian_lighting_circadian_lighting_livingroom
-    - wait_template: "{{ is_state('switch.switch_wall_livingroom_top', 'on') }}"
+      entity_id: switch.circadian_lighting_circadian_lighting_livingroom
     - service: light.turn_on
       entity_id: light.lamps_center_livingroom

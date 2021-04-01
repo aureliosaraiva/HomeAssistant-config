@@ -29,8 +29,9 @@
         - binary_sensor.switch_bedside_02_status
         - binary_sensor.rain_water_level_status
         - binary_sensor.washing_machine_status
+        - binary_sensor.switch_livingroom_status
       from: 'on'
-      to: 'unavailable'
+      to: 'off'
       for: '00:00:30'
   action:
     - service: notify.AURELIO

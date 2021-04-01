@@ -74,3 +74,11 @@
     - 'time_date'
     - 'time_utc'
     - 'beat'
+
+- platform: sql
+  db_url: !secret mysql_host
+  queries:
+    - name: DB size mB
+      query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / (1024 * 1024), 1) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
+      column: "value"
+      unit_of_measurement: MB

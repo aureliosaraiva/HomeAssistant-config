@@ -8,7 +8,7 @@ esphome:
   platform: ESP8266
   board: esp01_1m
   board_flash_mode: dout
-  esp8266_restore_from_flash: true
+  esp8266_restore_from_flash: false
 
 wifi:
   ssid: !secret wifi_ssid
@@ -56,6 +56,11 @@ binary_sensor:
     id: button_3
   - platform: status
     name: "$hostname Status"
+
+switch:
+  - platform: gpio
+    name: "$hostname button 1"
+    pin: GPIO12
 
 output:
   # Register the blue LED as a dimmable output ....

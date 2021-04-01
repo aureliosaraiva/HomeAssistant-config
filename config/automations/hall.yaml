@@ -21,10 +21,8 @@
           entity_id: input_boolean.turn_on_light_motion
           state: 'on'
   action:
-    - service: light.turn_on
-      entity_id:
-        - light.lamp_side_hall
-        - light.lamp_side_stairs
+    - service: switch.turn_on
+      entity_id: group.balizador
 
 - id: turn_off_hall_side_ligth
   alias: turn_off_hall_side_ligth
@@ -39,7 +37,5 @@
       for: '00:00:30'
   condition:
   action:
-    - service: light.turn_off
-      entity_id:
-        - light.lamp_side_hall
-        - light.lamp_side_stairs
+    - service: switch.turn_off
+      entity_id: group.balizador

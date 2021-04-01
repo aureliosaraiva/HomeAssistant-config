@@ -5,9 +5,11 @@
       from: 'off'
       to: 'on'
   action:
+    - service: switch.turn_on
+      entity_id: switch.switch_bedside_02_button_1
     - service: light.toggle
       entity_id:
-        - light.lamp_side_bed_aurelio
+        - light.lamp_side_bed_camila
 
 - id: switch_bedside_camila_top
   trigger:
@@ -16,9 +18,11 @@
       from: 'off'
       to: 'on'
   action:
+    - service: switch.turn_on
+      entity_id: switch.switch_bedside_01_button_1
     - service: light.toggle
       entity_id:
-        - light.lamp_side_bed_camila
+        - light.lamp_side_bed_aurelio
 
 - id: switch_bedside_aurelio_center
   trigger:

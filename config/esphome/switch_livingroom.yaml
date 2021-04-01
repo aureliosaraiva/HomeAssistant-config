@@ -1,10 +1,10 @@
 substitutions:
-  hostname: "switch_bedside_01"
-  ssid_ap: "switch_bedside_01"
+  hostname: "switch_livingroom"
+  ssid_ap: "switch_livingroom"
   versao: "1.0"
 
 esphome:
-  name: switch_bedside_01
+  name: switch_livingroom
   platform: ESP8266
   board: esp01_1m
   board_flash_mode: dout
@@ -56,11 +56,6 @@ binary_sensor:
     id: button_3
   - platform: status
     name: "$hostname Status"
-
-switch:
-  - platform: gpio
-    name: "$hostname button 1"
-    pin: GPIO12
 
 output:
   # Register the blue LED as a dimmable output ....
