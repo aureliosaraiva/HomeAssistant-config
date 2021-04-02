@@ -8,6 +8,7 @@
   action:
     - service: script.speech_engine
       data_template:
+        media_player: socialroom
         custom_message: >
           {{ [
            "Detectei que a porta da adega está aberta. Por favor feche a porta.",
@@ -32,6 +33,7 @@
   action:
     - service: script.speech_engine
       data_template:
+        media_player: socialroom
         custom_message: >
           {{ [
            "Obrigada por fechar.",
