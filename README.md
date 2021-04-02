@@ -30,5 +30,6 @@
   <tr>
     <td colspan="4">
       <img src="image/echo_dot.jpeg" width="100" />
+      <p>(5) - Echo Dot 3</p>
     </td>
   </tr>
