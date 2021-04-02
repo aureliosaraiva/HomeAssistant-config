@@ -29,6 +29,6 @@
 <table align="center" border="0">
   <tr>
     <td colspan="4">
-      <img src="image/echo_dot.jpeg" width="50" />
+      <img src="image/echo_dot.jpeg" width="100" />
     </td>
   </tr>
