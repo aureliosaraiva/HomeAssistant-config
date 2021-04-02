@@ -3,7 +3,7 @@
 default_config:
 
 recorder:
-  db_url: !secret mysql_host
+  db_url: !secret mysql_hostdd
 
 # Text to speech
 tts:
@@ -29,7 +29,7 @@ lovelace:
     - url: /local/custom_ui/mini-graph-card-bundle.js?v=0.10.0
       type: module
 
-webhook:
+webhook
 
 zigbee2mqtt_networkmap:
 pool_pump_service:
