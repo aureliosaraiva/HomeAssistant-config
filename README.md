@@ -121,3 +121,73 @@
     <td>1</td>
     <td>Wifi, cloud, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/73693.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/73693.html">Sylvania LIGHTIFY LED RGBW A19</a></td>
+    <td>Iluminação</td>
+    <td>20</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/GL-C-007-2ID.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/GL-C-007-2ID.html">Gledopto Zigbee LED Controller RGBW (2 ID)</a></td>
+    <td>Iluminação</td>
+    <td>2</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/GL-S-003Z.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/GL-S-003Z.html">Gledopto Zigbee 5W GU10 Bulb RGBW</a></td>
+    <td>Iluminação</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/GL-B-001Z.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/GL-B-001Z.html">Gledopto Zigbee 4W E12/E14 Bulb RGB+CCT</a></td>
+    <td>Iluminação</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/GL-D-003P.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/GL-D-003P.html">Gledopto Zigbee 6W Downlight RGB+CCT</a></td>
+    <td>Iluminação</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/GL-D-004Z.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/GL-D-004Z.html">Gledopto Zigbee 9W Downlight RGB+CCT</a></td>
+    <td>Iluminação</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/GL-D-005Z.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/GL-D-005Z.html">Gledopto Zigbee 12W Downlight RGB+CCT</a></td>
+    <td>Iluminação</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
