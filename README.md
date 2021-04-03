@@ -54,10 +54,28 @@
   </tr>
   <tr>
     <td>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdHqNr8N2nKbc4HzEP4LxX1fX4mUVBVCTVUg&usqp=CAU" width="100" />
+      <img src="https://www.androidcentral.com/sites/androidcentral.com/files/styles/large/public/article_images/2019/05/amazon-echo-show-5-cropped.png" width="100" />
     </td>
     <td>Amazon Echo Echo 8</td>
     <td>Notificação sonoras, comando por voz, musica</td>
     <td>1</td>
     <td>Wifi, cloud</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://in-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/0/1/01.png" width="100" />
+    </td>
+    <td>Google Home Mini</td>
+    <td>Notificação sonoras, comando por voz, musica</td>
+    <td>1</td>
+    <td>Wifi, cloud, local</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://img1.gratispng.com/20180519/ipv/kisspng-google-chromecast-2nd-generation-digital-media-p-5b00b3583909d6.7343602115267725682336.jpg" width="100" />
+    </td>
+    <td>Google Chromecast</td>
+    <td>Stream video, notificação</td>
+    <td>1</td>
+    <td>Wifi, cloud, local</td>
   </tr>
