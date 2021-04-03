@@ -81,7 +81,7 @@
   </tr>
   <tr>
     <td>
-      <img src="https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/393609-streamingmediaplayers-google-chromecastultra.png" width="100" />
+      <img src="https://i.pinimg.com/originals/7d/ec/ac/7decacf1133eefd440e291aaec0c2458.png" width="100" />
     </td>
     <td>Google Home View</td>
     <td>Stream video, Noticações sonoras, comando de voz</td>
