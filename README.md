@@ -34,6 +34,39 @@
     <th>Quantidade</th>
     <th>Conexão</th>
   </tr>
+
+  <tr>
+    <td>
+      <img src="image/intel.webp" width="100" />
+    </td>
+    <td>Intel Nuc Celeron</td>
+    <td>Central de automação do HomeAssistant. Nuc Intel Celeron 2,50 Ghz, 4ram, Hd 64gb, Ubuntu Server</td>
+    <td>1</td>
+    <td>Wifi, cloud, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://slae.sh/images/shippes_with.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://slae.sh/projects/cc2652/">Slaesh's CC2652RB stick</a></td>
+    <td>Hub Zigbee com zigbee2mqtt</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://i.pinimg.com/originals/40/07/b1/4007b1926ecd12c91f6ad7d802203485.png" width="100" />
+    </td>
+    <td>TP-Link Deco M5</td>
+    <td>Roteador Wifi Mesh</td>
+    <td>1</td>
+    <td>cloud, wifi, local</td>
+  </tr>
+
+
+
   <tr>
     <td>
       <img src="https://ibcdn.canaltech.com.br/7oULYUGvYykI1YX55Kp0fWQNjWU=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i413657.png" width="100" />
