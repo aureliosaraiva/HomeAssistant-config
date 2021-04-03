@@ -27,9 +27,20 @@
 ## Dispositivos
 
 <table align="center" border="0">
+<tr>
+  <th>Imagem</th>
+  <th>Nome</th>
+  <th>Descrição</th>
+  <th>Quantidade</th>
+  <th>Conexão</th>
+</tr>
   <tr>
-    <td colspan="4">
+    <td>
       <img src="image/echo_dot.jpeg" width="100" />
-      <p>(5) - Echo Dot 3</p>
+      <p>(5) - </p>
     </td>
+    <td>Amazon Echo Dot 3</td>
+    <td>Notificação sonoras, comando por voz, musica</td>
+    <td>5</td>
+    <td>Wifi</td>
   </tr>
