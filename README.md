@@ -39,7 +39,7 @@
       <img src="https://ibcdn.canaltech.com.br/7oULYUGvYykI1YX55Kp0fWQNjWU=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i413657.png" width="100" />
     </td>
     <td>Amazon Echo Dot 3</td>
-    <td>Notificação sonoras, comando por voz, musica</td>
+    <td>Noticações sonoras, comando por voz, musica</td>
     <td>5</td>
     <td>Wifi, cloud</td>
   </tr>
@@ -48,7 +48,7 @@
       <img src="https://ibcdn.canaltech.com.br/Z6pGDk5RK_x09c3LwIXSrHfyq7U=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i413664.png" width="100" />
     </td>
     <td>Amazon Echo</td>
-    <td>Notificação sonoras, comando por voz, musica</td>
+    <td>Noticações sonoras, comando por voz, musica</td>
     <td>1</td>
     <td>Wifi, cloud</td>
   </tr>
@@ -57,7 +57,7 @@
       <img src="https://www.androidcentral.com/sites/androidcentral.com/files/styles/large/public/article_images/2019/05/amazon-echo-show-5-cropped.png" width="100" />
     </td>
     <td>Amazon Echo Echo 8</td>
-    <td>Notificação sonoras, comando por voz, musica</td>
+    <td>Noticações sonoras, comando por voz, musica</td>
     <td>1</td>
     <td>Wifi, cloud</td>
   </tr>
@@ -66,7 +66,7 @@
       <img src="https://in-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/0/1/01.png" width="100" />
     </td>
     <td>Google Home Mini</td>
-    <td>Notificação sonoras, comando por voz, musica</td>
+    <td>Noticações sonoras, comando por voz, musica</td>
     <td>1</td>
     <td>Wifi, cloud, local</td>
   </tr>
@@ -75,7 +75,16 @@
       <img src="https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/393609-streamingmediaplayers-google-chromecastultra.png" width="100" />
     </td>
     <td>Google Chromecast</td>
-    <td>Stream video, notificação</td>
+    <td>Stream video, Noticações</td>
     <td>2</td>
+    <td>Wifi, cloud, local</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/393609-streamingmediaplayers-google-chromecastultra.png" width="100" />
+    </td>
+    <td>Google Home View</td>
+    <td>Stream video, Noticações sonoras, comando de voz</td>
+    <td>1</td>
     <td>Wifi, cloud, local</td>
   </tr>
