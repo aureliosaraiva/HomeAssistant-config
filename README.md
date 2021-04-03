@@ -27,20 +27,28 @@
 ## Dispositivos
 
 <table align="center" border="0">
-<tr>
-  <th>Imagem</th>
-  <th>Nome</th>
-  <th>Descrição</th>
-  <th>Quantidade</th>
-  <th>Conexão</th>
-</tr>
+  <tr>
+    <th>Imagem</th>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Quantidade</th>
+    <th>Conexão</th>
+  </tr>
   <tr>
     <td>
-      <img src="image/echo_dot.jpeg" width="100" />
-      <p>(5) - </p>
+      <img src="https://ibcdn.canaltech.com.br/7oULYUGvYykI1YX55Kp0fWQNjWU=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i413657.png" width="100" />
     </td>
     <td>Amazon Echo Dot 3</td>
     <td>Notificação sonoras, comando por voz, musica</td>
     <td>5</td>
-    <td>Wifi</td>
+    <td>Wifi, cloud</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://ibcdn.canaltech.com.br/Z6pGDk5RK_x09c3LwIXSrHfyq7U=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i413664.png" width="100" />
+    </td>
+    <td>Amazon Echo</td>
+    <td>Notificação sonoras, comando por voz, musica</td>
+    <td>1</td>
+    <td>Wifi, cloud</td>
   </tr>
