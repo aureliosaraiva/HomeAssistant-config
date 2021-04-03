@@ -72,10 +72,10 @@
   </tr>
   <tr>
     <td>
-      <img src="https://img1.gratispng.com/20180519/ipv/kisspng-google-chromecast-2nd-generation-digital-media-p-5b00b3583909d6.7343602115267725682336.jpg" width="100" />
+      <img src="https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/393609-streamingmediaplayers-google-chromecastultra.png" width="100" />
     </td>
     <td>Google Chromecast</td>
     <td>Stream video, notificação</td>
-    <td>1</td>
+    <td>2</td>
     <td>Wifi, cloud, local</td>
   </tr>
