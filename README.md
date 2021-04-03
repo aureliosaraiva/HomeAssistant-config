@@ -52,3 +52,12 @@
     <td>1</td>
     <td>Wifi, cloud</td>
   </tr>
+  <tr>
+    <td>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdHqNr8N2nKbc4HzEP4LxX1fX4mUVBVCTVUg&usqp=CAU" width="100" />
+    </td>
+    <td>Amazon Echo Echo 8</td>
+    <td>Notificação sonoras, comando por voz, musica</td>
+    <td>1</td>
+    <td>Wifi, cloud</td>
+  </tr>
