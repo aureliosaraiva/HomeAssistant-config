@@ -390,3 +390,13 @@
     <td>4</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://cdn.awsli.com.br/600x450/997/997051/produto/44581596/7ad19909f4.jpg" width="100" />
+    </td>
+    <td>Sonoff T2 Switch 3 gang</td>
+    <td>Interruptor</td>
+    <td>3</td>
+    <td>Wifi, local, ESPHome</td>
+  </tr>
