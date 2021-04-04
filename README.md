@@ -123,6 +123,12 @@
   </tr>
 
   <tr>
+    <td colspan="5" align="center">
+      Zigbee
+    </td>
+  </tr>
+
+  <tr>
     <td>
       <img src="https://www.zigbee2mqtt.io/images/devices/73693.jpg" width="100" />
     </td>
@@ -402,7 +408,7 @@
   </tr>
 
   <tr>
-    <td colspan="5">
+    <td colspan="5" align="center">
       DIY
     </td>
   </tr>
