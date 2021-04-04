@@ -191,3 +191,13 @@
     <td>1</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://templates.blakadder.com/assets/images/zemismart_KS-811_3gang.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/HGZB-043.html">Zemismart Smart light switch - 3 gang</a></td>
+    <td>Interrutor</td>
+    <td>10</td>
+    <td>Zigbee, local</td>
+  </tr>
