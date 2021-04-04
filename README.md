@@ -379,3 +379,14 @@
     <td>1</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/ZK-EU-2U.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/ZK-EU-2U.html">Zemismart Zigbee 3.0 dual USB wireless socket plug
+</a></td>
+    <td>Tomada</td>
+    <td>4</td>
+    <td>Zigbee, local</td>
+  </tr>
