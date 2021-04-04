@@ -285,3 +285,13 @@
     <td>1</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/MFKZQ01LM.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/MFKZQ01LM.html">Mi/Aqara smart home cubo</a></td>
+    <td>Interruptor por gesto (brinquedo kkk)</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
