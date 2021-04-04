@@ -242,3 +242,14 @@
     <td>2</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/WSDCGQ11LM.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html">Aqara temperature, humidity and pressure sensor
+</a></td>
+    <td>Temperatura, pressão, humidade</td>
+    <td>5</td>
+    <td>Zigbee, local</td>
+  </tr>
