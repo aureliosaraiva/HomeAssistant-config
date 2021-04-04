@@ -201,3 +201,23 @@
     <td>10</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/HGZB-043.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/HGZB-043.html">Zemismart Smart light switch - 3 gang sem neutro</a></td>
+    <td>Interrutor</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/HGZB-043.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/HGZB-043.html">Zemismart Smart light switch - 3 gang com neutro</a></td>
+    <td>Interrutor</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
