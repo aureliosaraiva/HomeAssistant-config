@@ -274,3 +274,14 @@
     <td>6</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/SJCGQ11LM.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html">Aqara water leak sensor
+</a></td>
+    <td>Sensor de vazamento de agua</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
