@@ -400,3 +400,29 @@
     <td>3</td>
     <td>Wifi, local, ESPHome</td>
   </tr>
+
+  <tr>
+    <td colspan="5">
+      DIY
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://cdn-media.itead.cc/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/p/o/pow-r2-04_2.jpg" width="100" />
+    </td>
+    <td>Sonoff Pow R2</td>
+    <td>Maquina de lavar roupa, bomba piscina, impressora 3d</td>
+    <td>3</td>
+    <td>Wifi, local, ESPHome</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://http2.mlstatic.com/D_NQ_NP_777052-MLB31117916696_062019-O.jpg" width="100" />
+    </td>
+    <td>NodeMCU V3</td>
+    <td>Sendor de chuva e presença na cama</td>
+    <td>2</td>
+    <td>Wifi, local, ESPHome</td>
+  </tr>
