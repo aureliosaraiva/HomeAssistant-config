@@ -19,15 +19,6 @@
   action:
     - service: script.enable_away_mode
 
-# - alias: when_enable_sleep_mode
-#   trigger:
-#     - platform: state
-#       entity_id: input_boolean.sleep_mode
-#       from: 'off'
-#       to: 'on'
-#   action:
-#     - service: script.enable_sleep_mode
-
 - alias: when_family_sleep_mode
   trigger:
     - platform: state

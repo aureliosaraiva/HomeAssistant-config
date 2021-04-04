@@ -1,9 +1,0 @@
-
-home_status:
-  sequence:
-    - service: script.speech_engine
-      data_template:
-        media_player: media_player.echo_dot_laboratorio
-        custom_message: >
-          Teste de script
-        call_no_announcement: 1

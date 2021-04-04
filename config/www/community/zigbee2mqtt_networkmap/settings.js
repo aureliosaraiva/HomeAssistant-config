@@ -1,2 +1,0 @@
-var webhook_trigger_update_id = '77cc8dc4f10d2d4a6d3007b96f30d0ca0da2fa9c80db96aace6cec515cec8ab1';
-var webhook_check_update_id = '7af672a9fc144312fdf0dc92da5950db415d2a8ebbb98c06fecfdbf93efe7356';
