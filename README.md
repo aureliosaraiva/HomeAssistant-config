@@ -295,3 +295,13 @@
     <td>1</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/ZNCZ02LM.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/ZNCZ02LM.html">Mi power plug ZigBee</a></td>
+    <td>Tomada com medidor de energia</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
