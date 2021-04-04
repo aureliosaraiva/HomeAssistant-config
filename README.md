@@ -335,3 +335,14 @@
     <td>5</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/IM6001-MTP01.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/IM6001-MTP01.html">SmartThings Motion sensor (2018 model)
+</a></td>
+    <td>Sensor de temperatura e presença</td>
+    <td>6</td>
+    <td>Zigbee, local</td>
+  </tr>
