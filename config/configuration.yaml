@@ -36,6 +36,13 @@ pool_pump_service:
 circadian_lighting:
 ct_light:
 global_macro:
+  speaker:
+    default: media_player.echo_sala
+    livingroom: media_player.echo_sala
+    kitchen: media_player.echo_dot_cozinha
+    bedroom: media_player.echo_dot_quarto
+    laboratory: media_player.echo_dot_laboratorio
+    socialroom: media_player.echo_dot_escritorio
   speech: !include speech.yaml
 
   # topic: your topic (optional, default zigbee2mqtt)
