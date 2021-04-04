@@ -263,3 +263,14 @@
     <td>5</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/MCCGQ11LM.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/MCCGQ11LM.html">Aqara door & window contact sensor
+</a></td>
+    <td>Sensor de contato (portas e janelas)</td>
+    <td>6</td>
+    <td>Zigbee, local</td>
+  </tr>
