@@ -305,3 +305,23 @@
     <td>1</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/DJT11LM.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/DJT11LM.html">Aqara vibration sensor</a></td>
+    <td>Sensor de vibração</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/GZCGQ01LM.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/GZCGQ01LM.html">MiJia light intensity sensor</a></td>
+    <td>Sensor de iluminação</td>
+    <td>1</td>
+    <td>Zigbee, local</td>
+  </tr>
