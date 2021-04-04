@@ -346,3 +346,14 @@
     <td>6</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/TS0044.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/TS0044.html">Tuya Wireless switch with 4 buttons
+</a></td>
+    <td>Botão de cena para até 12 combinações</td>
+    <td>2</td>
+    <td>Zigbee, local</td>
+  </tr>
