@@ -27,7 +27,6 @@ icloud
 __pycache__
 hacs
 alexa_media
-image
 tts
 secrets.yaml
 secrets
