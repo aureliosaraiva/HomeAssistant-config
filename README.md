@@ -360,11 +360,22 @@
 
   <tr>
     <td>
-      <img src="https://www.zigbee2mqtt.io/images/devices/TS0044.jpg" width="100" />
+      <img src="https://www.zigbee2mqtt.io/images/devices/TS0601_switch_4_gang.jpg" width="100" />
     </td>
     <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/TS0601_switch_4_gang.html">Tuya 4 gang switch
 </a></td>
     <td>Interruptor</td>
     <td>2</td>
+    <td>Zigbee, local</td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://cdn.gatry.com/gatry-static/promocao/imagem/bd19f0f62dd36383eb561c442bbc9db9.png" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/TS0121_plug.html">Zemismart 10A smart plug
+</a></td>
+    <td>Tomada</td>
+    <td>1</td>
     <td>Zigbee, local</td>
   </tr>
