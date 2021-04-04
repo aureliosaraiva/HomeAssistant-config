@@ -13,5 +13,3 @@
         media_player: media_player.echo_laboratory
         custom_message: >
           {{random_speech('ha_started')}}
-    # - service: light.turn_off
-    #

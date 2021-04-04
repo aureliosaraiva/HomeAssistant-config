@@ -19,11 +19,6 @@ scene: !include scenes.yaml
 light: !include light.yaml
 utility_meter: !include utility_meter.yaml
 
-logger:
-  default: warn
-  logs:
-    custom_components.ct_light: debug
-
 lovelace:
   resources:
     - url: /local/custom_ui/mini-graph-card-bundle.js?v=0.10.0
@@ -31,10 +26,8 @@ lovelace:
 
 webhook:
 
-zigbee2mqtt_networkmap:
 pool_pump_service:
 circadian_lighting:
-ct_light:
 global_macro:
   speaker:
     default: media_player.echo_sala
@@ -47,13 +40,9 @@ global_macro:
 
   # topic: your topic (optional, default zigbee2mqtt)
 panel_iframe:
-  networkmap:
-    title: 'Zigbee Map'
-    url: '/local/community/zigbee2mqtt_networkmap/map.html'
-    icon: 'mdi:graphql'
   zigbee2mqtt:
     title: 'Zigbee2Mqtt'
-    url: 'http://192.168.68.100:8080/#/map'
+    url: 'http://192.168.68.100:8080/#/dashboard'
     icon: 'mdi:graphql'
   esphome:
     title: 'ESPHome'
