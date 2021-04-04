@@ -63,6 +63,7 @@ sensor:
     update_interval: 2s
     accuracy_decimals: 5
     name: "$hostname A1_GND"
+    id: bed_right
     filters:
       - lambda: |-
           if (!isnan(x) && x>0) {
@@ -89,6 +90,7 @@ sensor:
     update_interval: 2s
     accuracy_decimals: 5
     name: "$hostname A3_GND"
+    id: bed_left
     filters:
       - lambda: |-
           if (!isnan(x) && x>0) {
@@ -96,3 +98,27 @@ sensor:
           } else {
             return {};
           }
+
+binary_sensor:
+  - platform: template
+    name: "$hostname right"
+    filters:
+      - delayed_on: 4s
+      - delayed_off: 4s
+    lambda: |-
+      if (!isnan(id(bed_right).state) && (id(bed_right).state) && id(bed_right).state > 1) {
+        return true;
+      } else {
+        return false;
+      }
+  - platform: template
+    name: "$hostname left"
+    filters:
+      - delayed_on: 4s
+      - delayed_off: 4s
+    lambda: |-
+      if (!isnan(id(bed_left).state) && (id(bed_left).state) && id(bed_left).state > 1) {
+        return true;
+      } else {
+        return false;
+      }
