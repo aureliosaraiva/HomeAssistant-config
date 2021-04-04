@@ -357,3 +357,14 @@
     <td>2</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/TS0044.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/TS0601_switch_4_gang.html">Tuya 4 gang switch
+</a></td>
+    <td>Interruptor</td>
+    <td>2</td>
+    <td>Zigbee, local</td>
+  </tr>
