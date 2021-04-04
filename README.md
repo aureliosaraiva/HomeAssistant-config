@@ -221,3 +221,14 @@
     <td>1</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/ZBMINI.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/ZBMINI.html">Zigbee two way smart switch
+</a></td>
+    <td>Interrutor, switch, relay</td>
+    <td>10</td>
+    <td>Zigbee, local</td>
+  </tr>
