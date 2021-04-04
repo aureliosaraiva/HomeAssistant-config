@@ -1,15 +1,71 @@
+welcome:
+  - Nossa familia está em casa agora.
+  - Seja bem-vindo!. Sentimos sua falta. Ou pelo menos a Lara sentiu.
+  - Nossa casa agora está completa, descanse a cabeça e relaxe os pés! Bem-vindo de volta!
+  - A vida é como uma música, você voltou para onde pertence.
+  - Toc-Toc. Quem está aí? A familia voltou!
+  - Lara, advinha que esta de volta em casa!
+  - O sensor da porta principal acabou de me dizer que estão todos em casa.
+  - Eu sei um segredo! Aurélio e Camila estão em casa!
+  - Sua chegada foi registrada pela casa mais inteligente do Guarujá.
+  - Estou sentindo uma perturbação na força. Aurélio e Camila devem estar em casa!
+  - E a casa se torna um lar. Bem-vindos de volta
+  - Aurélio e Camila chegaram. Hash tag casa inteligente.
+  - Apenas um anúncio rápido. Aurélio e Camila chegaram!
+  - Bem-vindo a casa! É bom vê-lo novamente! Deixe-me acender as luzes.
 adega_open:
-   - Detectei que a porta da adega está aberta. Por favor feche a porta.
-   - Não consigo manter a temperatura da adega com a porta aberta. Por favor feche.
-   - Por favor, feche a porta da adega, tenho vinhos valiosos.
-   - Por favor, tenha respeito pelos vinhos, eles gostam de baixas temperaturas. Por favor feche.
-   - Olá humano, preciso de uma ajuda. Consegue fechar a porta da adega para mim?
-   - A temperatura da adega vai começar a subir se a porta não estiver fechada.
+  - Detectei que a porta da adega está aberta. Por favor feche a porta.
+  - Não consigo manter a temperatura da adega com a porta aberta. Por favor feche.
+  - Por favor, feche a porta da adega, tenho vinhos valiosos.
+  - Por favor, tenha respeito pelos vinhos, eles gostam de baixas temperaturas. Por favor feche.
+  - Olá humano, preciso de uma ajuda. Consegue fechar a porta da adega para mim?
+  - A temperatura da adega vai começar a subir se a porta não estiver fechada.
+
 adega_close:
-   - Obrigada por fechar.
-   - Obrigada.
-   - Porta fechada, obrigada.
-   - Obrigada, vou ajustar a temperatura dos vinhos.
-   - Obrigada, agora consigo manter a temperatura dos vinhos.
-   - A temperatura da adega vai começar a subir, se a porta não estiver fechada.
-   - Obrigada, meus vinhos estão salvos.
+  - Obrigada por fechar.
+  - Obrigada.
+  - Porta fechada, obrigada.
+  - Obrigada, vou ajustar a temperatura dos vinhos.
+  - Obrigada, agora consigo manter a temperatura dos vinhos.
+  - A temperatura da adega vai começar a subir, se a porta não estiver fechada.
+  - Obrigada, meus vinhos estão salvos.
+
+fridge_open:
+  - Identifiquei que a porta da geladeira ficou aberta. Você poderia fechar?
+  - Meus sensores me dizem que a porta da geladeira está aberta.
+  - Você poderia fechar a porta da geladeira?
+
+rain:
+  - Identifiquei começou a chover.
+  - Está chovendo!
+  - Foi detectado que está chovendo.
+
+ha_started:
+  - Estou online novamente ou ativar os sensores!
+  - Pronto! Estou aqui novamente!
+  - Parece que voltei a vida. Vou monitorar a casa.
+  - Finalmente meus sistemas estão on-line novamente.
+  - Estou iniciando meus sistemas. Só um momento.
+
+washing_machine_run:
+  - Oba, parece que vamos lavar roupas. <break time=\"1s\" />Adoro o cheiro de roupa limpa.
+  - Detectei que a máquina de lavar roupa foi ligada.
+  - Parece que temos roupas sujas para serem lavadas.
+  - A máquina de lavar foi ligada, vou monitorar e te aviso quando terminar."
+
+washing_machine_rinse:
+  - Detectei que a máquina de lavar roupas vai começar a enxaguar.
+  - A máquina de lavar roupas vai começar a enxaguar. Esse é o momento para adicionar amaciante.
+  - Que tal deixar as roupas mais cheirosas? As roupas estão enxaguando, é o momento ideal para adicionar amaciante.
+  - As roupas estão enxaguando. Você poderia me ajudar adicionando amaciante?
+  - Você sabia que adicionar amaciante durante o enxaguar deixa as roupas mais cheirosas?
+  - Desculpa incomodar, mas a máquina de lavar roupas começou a enxaguar.
+  - Oi, estou passando pra avisar que a máquina está começando a enxaguar.
+
+washing_machine_end:
+  - Detectei que a máquina de lavar roupas terminou de lavar.
+  - Finalmente, todas as roupas estão limpas.
+  - As roupas estão lavadas, você poderia me ajudar? Não tenho como estender as roupas no varal!
+  - Finalmente, as roupas estão limpas. Agora você só precisa estender no varal.
+  - Sinto cheiro de roupas limpas, a máquina de lavar terminou de lavar.
+  - Desculpa incomodar, mais detectei que a máquina de lavar roupas terminou de lavar.

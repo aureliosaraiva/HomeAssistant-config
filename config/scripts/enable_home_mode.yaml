@@ -13,19 +13,4 @@ enable_home_mode:
       data_template:
         media_player: media_player.echo_sala
         custom_message: >
-          {{ [
-            "Nossa familia está em casa agora.",
-            "Seja bem-vindo!. Sentimos sua falta. Ou pelo menos a Lara sentiu.",
-            "Nossa casa agora está completa, descanse a cabeça e relaxe os pés! Bem-vindo de volta!",
-            "A vida é como uma música, você voltou para onde pertence.",
-            "Toc-Toc. Quem está aí? A familia voltou!",
-            "Lara, advinha que esta de volta em casa!",
-            "O sensor da porta principal acabou de me dizer que estão todos em casa.",
-            "Eu sei um segredo! Aurélio e Camila estão em casa!",
-            "Sua chegada foi registrada pela casa mais inteligente do Guarujá.",
-            "Estou sentindo uma perturbação na força. Aurélio e Camila devem estar em casa!",
-            "E a casa se torna um lar. Bem-vindos de volta ",
-            "Aurélio e Camila chegaram. Hash tag casa inteligente.",
-            "Apenas um anúncio rápido. Aurélio e Camila chegaram!",
-            "Bem-vindo a casa! É bom vê-lo novamente! Deixe-me acender as luzes."
-          ] | random }}
+          {{random_speech('welcome')}}

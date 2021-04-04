@@ -30,9 +30,5 @@
           data_template:
             media_player: media_player.echo_dot_cozinha
             custom_message: >
-              {{ [
-               "Identifiquei que a porta da geladeira ficou aberta. Você poderia fechar?",
-               "Meus sensores me dizem que a porta da geladeira está aberta.",
-               "Você poderia fechar a porta da geladeira?"
-               ] | random }}
+              {{random_speech('fridge_open')}}
             call_no_random: 1
