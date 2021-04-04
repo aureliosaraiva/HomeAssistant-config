@@ -33,3 +33,8 @@
   color_temp: true
   brightness: true
   rgb: true
+
+- platform: merge_light_ct_rgb
+  name: Bancada cozinha
+  entity_id_light_ct: light.led_americana_cct
+  entity_id_light_rgb: light.led_americana_rgb

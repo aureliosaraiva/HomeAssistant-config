@@ -28,6 +28,7 @@ webhook:
 
 pool_pump_service:
 circadian_lighting:
+merge_light_ct_rgb:
 global_macro:
   speaker:
     default: media_player.echo_sala
