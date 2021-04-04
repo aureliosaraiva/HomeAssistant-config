@@ -27,8 +27,4 @@
       data_template:
         media_player: media_player.echo_sala
         custom_message: >
-          {{ [
-           "Identifiquei começou a chover.",
-           "Está chovendo!",
-           "Foi detectado que está chovendo."
-           ] | random }}
+          {{random_speech('rain')}}
