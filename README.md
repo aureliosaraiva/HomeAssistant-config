@@ -325,3 +325,13 @@
     <td>1</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/IM6001-MPP01.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/IM6001-MPP01.html">SmartThings Multipurpose sensor (2018 model)</a></td>
+    <td>Sensor de temperatura e abertura</td>
+    <td>5</td>
+    <td>Zigbee, local</td>
+  </tr>
