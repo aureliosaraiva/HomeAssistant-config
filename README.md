@@ -232,3 +232,13 @@
     <td>10</td>
     <td>Zigbee, local</td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://www.zigbee2mqtt.io/images/devices/BASICZBR3.jpg" width="100" />
+    </td>
+    <td><a target="_blank" href="https://www.zigbee2mqtt.io/devices/BASICZBR3.html">Zigbee smart switch</a></td>
+    <td>Interrutor, switch, relay</td>
+    <td>2</td>
+    <td>Zigbee, local</td>
+  </tr>
