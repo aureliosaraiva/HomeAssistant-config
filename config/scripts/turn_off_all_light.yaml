@@ -67,6 +67,9 @@ turn_off_other_light:
         # spot socialroom
         - switch.switch_wall_hall_2_l4_spot
 
+        - switch.lamp_kiosk
+        - switch.lamp_machine_house
+
     - service: light.turn_off
       entity_id:
         # - light.lamp_side_bed_aurelio÷\
@@ -76,8 +79,9 @@ turn_off_other_light:
         - light.lamps_closet
         # - light.lamps_socialroom
         # - light.lamp_spot_livingroom
-        - light.lamp_kiosk
-        - light.lamp_machine_house
+        - light.lamps_bedroom
+        - light.led_americana_cct
+        - light.led_americana_rgb
 
 turn_off_light_on_sleep_mode_is_off:
   mode: queued
@@ -88,13 +92,10 @@ turn_off_light_on_sleep_mode_is_off:
     - service: switch.turn_off
       entity_id:
         - switch.switch_wall_bathroom_top
-        # - switch.switch_wall_bedroom_top
-        # - switch.switch_wall_closet_top
     - service: light.turn_off
       entity_id:
         - light.lamp_side_bed_aurelio
         - light.lamp_side_bed_camila
-        - light.lamps_center_livingroom
 
 turn_off_all_light:
   mode: queued
