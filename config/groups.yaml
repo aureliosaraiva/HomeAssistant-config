@@ -1,3 +1,9 @@
+bed_occupancy:
+  icon: mdi:bed
+  entities:
+    - binary_sensor.bed_occupancy_left
+    - binary_sensor.bed_occupancy_right
+
 balizador:
   icon: hass:lightbulb
   entities:
