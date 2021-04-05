@@ -69,3 +69,8 @@ washing_machine_end:
   - Finalmente, as roupas estão limpas. Agora você só precisa estender no varal.
   - Sinto cheiro de roupas limpas, a máquina de lavar terminou de lavar.
   - Desculpa incomodar, mais detectei que a máquina de lavar roupas terminou de lavar.
+
+sleep_mode:
+  - Todos estão na cama, estou apagando as luzes
+  - Vou desligar todas as luzes, boa noite!
+  - Boa noite, estou desligando todas as luzes!
