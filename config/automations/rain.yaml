@@ -1,11 +1,10 @@
-- alias: when_rain
-  id: when_rain
+- alias: when_start_rain
+  id: when_start_rain
   initial_state: 'on'
   trigger:
-    - platform: state
-      entity_id: binary_sensor.rain_water_level_digital
-      from: 'off'
-      to: 'on'
+    - platform: numeric_state
+      entity_id: sensor.chuva_analogica
+      below: 71
     - platform: homeassistant
       event: start
     - platform: event
@@ -13,13 +12,31 @@
   condition:
     - condition: and
       conditions:
-        - condition: state
-          entity_id: binary_sensor.rain_water_level_digital
-          state: 'on'
+        - condition: numeric_state
+          entity_id: sensor.chuva_analogica
+          below: 71
+  action:
+    - service: timer.start
+      data:
+        entity_id: timer.rain
+
+- alias: when_start_rain_notify
+  id: when_start_rain_notify
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: timer.started
+      event_data:
+        entity_id: timer.rain
+    - platform: homeassistant
+      event: start
+    - platform: event
+      event_type: automation_reloaded
   action:
     - service: notify.AURELIO
       data_template:
-        message: "Começou a chover em casa!"
+        message: >
+          {{random_speech('rain')}}
     - condition: state
       entity_id: input_boolean.away_mode
       state: 'off'
