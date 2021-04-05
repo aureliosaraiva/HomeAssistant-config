@@ -9,6 +9,7 @@ esphome:
   board: esp01_1m
   board_flash_mode: dout
   esp8266_restore_from_flash: false
+  arduino_version: 2.4.2
 
 wifi:
   ssid: !secret wifi_ssid
@@ -22,6 +23,7 @@ captive_portal:
 
 logger:
   baud_rate: 0
+  level: INFO
 
 # Enable Home Assistant API//
 api:

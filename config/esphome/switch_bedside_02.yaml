@@ -21,7 +21,8 @@ captive_portal:
 
 logger:
   baud_rate: 0
-
+  level: INFO
+  
 # Enable Home Assistant API//
 api:
 
