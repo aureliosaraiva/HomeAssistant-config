@@ -5,6 +5,13 @@
       from: 'off'
       to: 'on'
       for: '00:01:00'
+  condition:
+    - condition: time
+      after: '02:00:00'
+      before: '21:30:00'
+    - condition: state
+      entity_id: input_boolean.sleep_mode
+      state: 'off'
   action:
     - service: script.enable_sleep_mode
     - service: script.speech_engine
