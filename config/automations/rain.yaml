@@ -4,7 +4,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.chuva_analogica
-      below: 71
+      below: 0.71
     - platform: homeassistant
       event: start
     - platform: event
@@ -14,7 +14,7 @@
       conditions:
         - condition: numeric_state
           entity_id: sensor.chuva_analogica
-          below: 71
+          below: 0.71
   action:
     - service: timer.start
       data:
