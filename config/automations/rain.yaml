@@ -28,10 +28,6 @@
       event_type: timer.started
       event_data:
         entity_id: timer.rain
-    - platform: homeassistant
-      event: start
-    - platform: event
-      event_type: automation_reloaded
   action:
     - service: notify.AURELIO
       data_template:
