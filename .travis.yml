@@ -4,6 +4,7 @@ python: "3.8"
 
 before_install:
   - mv config/travis_secrets.yaml config/secrets.yaml
+  - mv config/android_travis config/.android
 
 install:
   - pip3 install homeassistant
