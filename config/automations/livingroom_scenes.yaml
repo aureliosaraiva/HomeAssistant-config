@@ -19,7 +19,8 @@
                 color_temp: 200
             - service: script.speech_engine
               data_template:
-                media_player: {{speaker('livingroom')}}
+                media_player: >
+                  {{speaker('livingroom')}}
                 custom_message: >
                   {{random_speech('livingroom_circadian_off')}}
     - choose:
@@ -32,6 +33,7 @@
               entity_id: switch.circadian_lighting_livingroom
             - service: script.speech_engine
               data_template:
-                media_player: {{speaker('livingroom')}}
+                media_player: >
+                  {{speaker('livingroom')}}
                 custom_message: >
                   {{random_speech('livingroom_circadian_on')}}
