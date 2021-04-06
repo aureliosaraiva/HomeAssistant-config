@@ -74,3 +74,12 @@ sleep_mode:
   - Todos estão na cama, estou apagando as luzes
   - Vou desligar todas as luzes, boa noite!
   - Boa noite, estou desligando todas as luzes!
+
+livingroom_circadian_off:
+  - Controle de iluminação desativado
+  - Iluminação ambiente desativa
+
+livingroom_circadian_on:
+  - Religando as luzes ambiente
+  - Religando a iluminação ambiente
+  - Iluminação ambiente religada
