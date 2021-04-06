@@ -11,6 +11,6 @@ enable_home_mode:
     - service: script.turn_on_light_hall_at_home
     - service: script.speech_engine
       data_template:
-        media_player: media_player.echo_sala
+        media_player: {{speaker('livingroom')}}
         custom_message: >
           {{random_speech('welcome')}}

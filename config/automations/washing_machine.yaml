@@ -6,8 +6,7 @@
   action:
     - service: script.speech_engine
       data_template:
-        media_player:
-          - media_player.echo_dot_cozinha
+        media_player: {{speaker('kitchen')}}
         custom_message: >
           {{random_speech('washing_machine_run')}}
         call_no_announcement: 1
@@ -23,13 +22,12 @@
   action:
     - service: script.speech_engine
       data_template:
-        media_player:
-          - media_player.echo_dot_cozinha
+        media_player: {{speaker('kitchen')}}
         custom_message: >
           {{random_speech('washing_machine_rinse')}}
         call_no_announcement: 1
         call_no_random: 1
-    
+
 - alias: when_washing_machine_end
   trigger:
     - platform: state
@@ -38,8 +36,7 @@
   action:
     - service: script.speech_engine
       data_template:
-        media_player:
-          - media_player.echo_dot_cozinha
+        media_player: {{speaker('kitchen')}}
         custom_message: >
           {{random_speech('washing_machine_end')}}
         call_no_announcement: 1
