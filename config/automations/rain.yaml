@@ -38,6 +38,7 @@
       state: 'off'
     - service: script.speech_engine
       data_template:
-        media_player: {{speaker('livingroom')}}
+        media_player: >
+          {{speaker('livingroom')}}
         custom_message: >
           {{random_speech('rain')}}

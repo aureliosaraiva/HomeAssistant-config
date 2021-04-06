@@ -10,6 +10,7 @@
           HomeAssistant online
     - service: script.speech_engine
       data_template:
-        media_player: {{speaker('laboratory')}}
+        media_player: >
+          {{speaker('laboratory')}}
         custom_message: >
           {{random_speech('ha_started')}}

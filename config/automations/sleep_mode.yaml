@@ -16,6 +16,7 @@
     - service: script.enable_sleep_mode
     - service: script.speech_engine
       data_template:
-        media_player: {{speaker('bedroom')}}
+        media_player: >
+          {{speaker('bedroom')}}
         custom_message: >
           {{random_speech('sleep_mode')}}
