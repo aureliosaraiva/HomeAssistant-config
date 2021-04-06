@@ -1,0 +1,27 @@
+- platform: template
+  sensors:
+    tv_living_room_movie:
+      friendly_name: Modo Filme
+      entity_id: media_player.amazon_fire_tv
+      value_template: >
+        {% if states.media_player.amazon_fire_tv.attributes.app_name in ['Netflix', 'com.amazon.amazonvideo.livingroom.firetv'] %}
+        on
+        {% else %}
+        off
+        {% endif %}
+
+    tv_living_room:
+      entity_id: media_player.amazon_fire_tv
+      friendly_name: 'Televisão da sala'
+      value_template: >
+        {%- if is_state('media_player.amazon_fire_tv', 'off') or is_state('media_player.cast_living_room', 'unavailable') -%}
+        off
+        {% else %}
+        on
+        {% endif %}
+      icon_template: >-
+          {%- if is_state('media_player.amazon_fire_tv', 'off') or is_state('media_player.cast_living_room', 'unavailable') -%}
+            mdi:television-classic-off
+          {% else %}
+            mdi:television-classic
+          {% endif %}
