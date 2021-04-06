@@ -8,6 +8,7 @@
   action:
     - service: script.speech_engine
       data_template:
+        media_player: {{speaker('socialroom')}}
         custom_message: >
           {{random_speech('adega_open')}}
         call_no_random: 1
@@ -25,6 +26,7 @@
   action:
     - service: script.speech_engine
       data_template:
+        media_player: {{speaker('socialroom')}}
         custom_message: >
           {{random_speech('adega_close')}}
         call_no_random: 1
