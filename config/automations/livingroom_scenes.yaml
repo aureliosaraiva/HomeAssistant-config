@@ -1,4 +1,5 @@
-- alias: 'Test button'
+- alias: button_scenes_1_double
+  id: button_scenes_1_double
   trigger:
     - platform: state
       entity_id: sensor.button_scenes_action
@@ -37,3 +38,16 @@
                   {{speaker('livingroom')}}
                 custom_message: >
                   {{random_speech('livingroom_circadian_on')}}
+
+- alias: button_scenes_1_single
+  id: button_scenes_1_single
+  trigger:
+    - platform: state
+      entity_id: sensor.button_scenes_action
+      to: '1_single'
+  action:
+    - service: light.turn_toogle
+      entity_id: light.merge_light_ct_rgb_bancada_cozinha
+      data:
+        color_temp: 200
+        brightness: 46
