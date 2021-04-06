@@ -523,3 +523,38 @@ camera:
     name: ISS
     still_image_url: http://staticmap.openstreetmap.de/staticmap.php?center={{ state_attr('binary_sensor.iss', 'lat') }},{{ state_attr('binary_sensor.iss', 'long') }}&zoom=4&size=865x512&maptype=mapnik&markers={{ state_attr('binary_sensor.iss', 'lat') }},{{ state_attr('binary_sensor.iss', 'long') }},lightblue
     limit_refetch_to_url_change: true
+
+media_player:
+  - platform: androidtv
+    name: Amazon Fire TV
+    host: 192.168.68.115
+    device_class: firetv
+    adbkey: "/config/.android/adbkey"
+    apps:
+      com.amazon.amazonvideo.livingroom: "Amazon Video"
+      com.netflix.ninja: "Netflix"
+      com.google.android.youtube.tv: "YouTube"
+      com.google.android.tvlauncher: "Menu"
+    state_detection_rules:
+      'com.amazon.amazonvideo.livingroom.firetv':
+        - 'playing':
+            'wake_lock_size': 4  # this indentation is important!
+        - 'playing':
+            'wake_lock_size': 3  # this indentation is important!
+        - 'paused':
+            'wake_lock_size': 2  # this indentation is important!
+        - 'paused':
+            'wake_lock_size': 1  # this indentation is important!
+        - 'standby'
+      'com.amazon.tv.launcher':
+        - 'playing':
+            'wake_lock_size': 4  # this indentation is important!
+        - 'playing':
+            'wake_lock_size': 3  # this indentation is important!
+        - 'paused':
+            'wake_lock_size': 2  # this indentation is important!
+        - 'paused':
+            'wake_lock_size': 1  # this indentation is important!
+        - 'standby'
+      'com.netflix.ninja':
+        - 'media_session_state'
