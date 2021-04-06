@@ -28,7 +28,8 @@
       default:
         - service: script.speech_engine
           data_template:
-            media_player: media_player.echo_dot_cozinha
+            media_player: >
+              {{speaker('kitchen')}}
             custom_message: >
               {{random_speech('fridge_open')}}
             call_no_random: 1
