@@ -527,7 +527,7 @@ camera:
 media_player:
   - platform: androidtv
     name: Amazon Fire TV
-    host: 192.168.68.115
+    host: !secret fire_tv
     device_class: firetv
     adbkey: "/config/.android/adbkey"
     apps:
