@@ -4,7 +4,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.chuva_analogica
-      below: 0.71
+      below: 0.6
     - platform: homeassistant
       event: start
     - platform: event
@@ -14,7 +14,7 @@
       conditions:
         - condition: numeric_state
           entity_id: sensor.chuva_analogica
-          below: 0.71
+          below: 0.6
   action:
     - service: timer.start
       data:
@@ -28,6 +28,12 @@
       event_type: timer.started
       event_data:
         entity_id: timer.rain
+  condition:
+    - condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.chuva_analogica
+          below: 0.61
   action:
     - service: notify.AURELIO
       data_template:
