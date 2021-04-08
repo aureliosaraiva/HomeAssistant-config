@@ -61,15 +61,14 @@ panel_iframe:
 telegram_bot:
   - platform: polling
     api_key: !secret telegram_key
-    allowed_chat_ids:
-      - 611383381
+    allowed_chat_ids: !secret telegram_allowed_chat_ids
 notify:
   - platform: telegram
     name: AURELIO
-    chat_id: 611383381
+    chat_id: !secret telegram_aurelio
   - platform: telegram
     name: CAMILA
-    chat_id: 1656225164
+    chat_id: !secret telegram_camila
 
 cloud:
   google_actions:
