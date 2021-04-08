@@ -1,5 +1,6 @@
 swimming_season:
   name: Swimming Season
+  description: 'teste de conteudo aqui'
   icon: mdi:swim
 guest_mode:
   name: Modo Visita
