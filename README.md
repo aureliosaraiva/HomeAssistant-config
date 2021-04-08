@@ -491,6 +491,7 @@
     </td>
   </tr>
 
+
   <tr>
     <td>
     text_notifications
@@ -552,14 +553,12 @@
   <tr>
     <td>
     Acende a luz externa e interna quando o nível de luminosidade for baixa Também habilita os sensores de presença que eles liguem as luzes quando houver movimento.
-
     </td>
   </tr>
 
   <tr>
     <td>
     Acende a luz externa e interna quando o nível de luminosidade for baixa Também habilita os sensores de presença que eles liguem as luzes quando houver movimento.
-
     </td>
   </tr>
 
