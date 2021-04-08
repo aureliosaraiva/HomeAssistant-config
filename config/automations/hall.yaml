@@ -4,8 +4,7 @@
     - platform: state
       entity_id:
         - binary_sensor.door_hall_contact
-        - binary_sensor.motion_hall_occupancy
-        - binary_sensor.motion_stairs_occupancy
+        - group.motion_hall
       from: 'off'
       to: 'on'
   condition:
@@ -30,12 +29,14 @@
     - platform: state
       entity_id:
         - binary_sensor.door_hall_contact
-        - binary_sensor.motion_hall_occupancy
-        - binary_sensor.motion_stairs_occupancy
+        - group.motion_hall
       from: 'on'
       to: 'off'
       for: '00:00:30'
   condition:
+    - condition: state
+      entity_id: group.motion_hall
+      state: 'off'
   action:
     - service: switch.turn_off
       entity_id: group.balizador

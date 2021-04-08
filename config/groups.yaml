@@ -10,6 +10,12 @@ balizador:
     - switch.switch_side_hall
     - switch.switch_side_stairs
 
+motion_hall:
+  icon: mdi:motion-sensor
+  entities:
+    - binary_sensor.motion_hall_occupancy
+    - binary_sensor.motion_stairs_occupancy
+
 family:
   entities:
     - sensor.tracker_aurelio
