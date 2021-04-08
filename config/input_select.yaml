@@ -1,0 +1,17 @@
+pool_pump:
+  name: Pool Pump mode
+  options:
+    - 'Auto'
+    - 'On'
+    - 'Off'
+  initial: 'Auto'
+  icon: mdi:engine
+zigbee2mqtt_log_level:
+  name: Zigbee2MQTT Log Level
+  options:
+    - debug
+    - info
+    - warn
+    - error
+  initial: info
+  icon: mdi:format-list-bulleted

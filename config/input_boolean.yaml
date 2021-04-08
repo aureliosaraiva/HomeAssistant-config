@@ -1,0 +1,27 @@
+swimming_season:
+  name: Swimming Season
+  icon: mdi:swim
+guest_mode:
+  name: Modo Visita
+  initial: off
+sleep_mode:
+  name: Modo dormindo
+  initial: off
+away_mode:
+  name: Modo Ausente
+  initial: off
+speech_notifications:
+  name: Notificações sonoras
+  initial: on
+text_notifications:
+  name: Notificações por texto
+  initial: on
+turn_on_the_light_external:
+  name: Luzes externa
+  initial: off
+turn_on_the_light_inside:
+  name: Luzes interna
+  initial: off
+turn_on_light_motion:
+  name: Luzez automatica por presença
+  initial: on

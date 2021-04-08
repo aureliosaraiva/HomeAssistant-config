@@ -17,3 +17,8 @@
       value_template: "{{ states.sensor.poolmachine_wattage.state | float > 8 }}"
       friendly_name: "Pool Pump running"
       device_class: moving
+- platform: ping
+  host: 8.8.8.8
+  scan_interval: 5
+  name: "Google"
+  count: 2

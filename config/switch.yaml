@@ -1,0 +1,28 @@
+- platform: mqtt
+  name: "Zigbee2MQTT Main join"
+  state_topic: "zigbee2mqtt/bridge/info"
+  value_template: '{{ value_json.permit_join | lower }}'
+  command_topic: "zigbee2mqtt/bridge/request/permit_join"
+  payload_on: "true"
+  payload_off: "false"
+- platform: circadian_lighting
+  name: bedside
+  lights_ct:
+    - light.lamp_side_bed_aurelio
+    - light.lamp_side_bed_camila
+- platform: circadian_lighting
+  name: livingroom
+  lights_ct:
+    - light.lamps_center_livingroom
+- platform: circadian_lighting
+  name: socialroom
+  lights_ct:
+    - light.lamps_socialroom
+- platform: circadian_lighting
+  name: bedroom
+  lights_ct:
+    - light.lamps_bedroom
+- platform: circadian_lighting
+  name: closet
+  lights_ct:
+    - light.lamps_closet
