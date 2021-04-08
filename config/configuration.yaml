@@ -18,6 +18,7 @@ script: !include_dir_merge_named scripts
 scene: !include scenes.yaml
 light: !include light.yaml
 utility_meter: !include utility_meter.yaml
+input_boolean: !include input_boolean.yaml
 
 lovelace:
   resources:
@@ -127,34 +128,6 @@ input_datetime:
     has_time: true
     icon: 'mdi:clock-time-five-outline'
 
-input_boolean:
-  swimming_season:
-    name: Swimming Season
-    icon: mdi:swim
-  guest_mode:
-    name: Modo Visita
-    initial: off
-  sleep_mode:
-    name: Modo dormindo
-    initial: off
-  away_mode:
-    name: Modo Ausente
-    initial: off
-  speech_notifications:
-    name: Notificações sonoras
-    initial: on
-  text_notifications:
-    name: Notificações por texto
-    initial: on
-  turn_on_the_light_external:
-    name: Luzes externa
-    initial: off
-  turn_on_the_light_inside:
-    name: Luzes interna
-    initial: off
-  turn_on_light_motion:
-    name: Luzez automatica por presença
-    initial: on
 
 ############## JE05 ############################
 
