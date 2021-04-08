@@ -434,6 +434,114 @@
   </tr>
 </table>
 
+
+## Controle usado na automação
+
+<table align="center" border="0">
+<tr>
+  <td>Entidade</td>
+  <td>Nome</td>
+  <td>Descrição</td>
+</tr>
+  <tr>
+    <td>
+    guest_mode
+    </td>
+    <td>
+    Tem visita?
+    </td>
+    <td>
+    Usado definir se tem visitas em casa, isso é util para habilitar/desabilitar automações. Por exemplo, quando todos estão na cama uma automação que desliga todas a luzes, porém não existe sensor na camada de visitas. Nesse caso não posso executar essa automação da mesma forma. Outro exemplo é habilitar automaticamente a rede wifi de visitante.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    sleep_mode
+    </td>
+    <td>
+    Todos estão na cama
+    </td>
+    <td>
+    Usado para identificar se todos estão na cama. Exemplo, tenho gatos em casa, e se todos estão na cama os sensores de presença devem ficar desligados. Outro exemplo, posso ligar o alarme de todos já estão na cama.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    away_mode
+    </td>
+    <td>
+    Se a casa não tem ninguém
+    </td>
+    <td>
+    Usado para sinalizar que não há ninguém em casa. Por exemplo, se marcado como true desativar sensores de movimento para acender luz ou mesmo desligar todas as luzes.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    speech_notifications
+    </td>
+    <td>
+    Ativa/Desativa notificações sonoras
+    </td>
+    <td>
+    Tenho diversas automações que emitem frase na Alexa com informações por audio. Porém se esse campo estiver desmarcado, as notificações são suspensas. Util por exemplo para desligar quando todos estiverem na cama ou mesmo fora de casa.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    text_notifications
+    </td>
+    <td>
+    Ativa/Desativa notificações por texto no Telegram
+    </td>
+    <td>
+    Permite que eu desative as notificações por texto em determinados momento.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    turn_on_the_light_external
+    </td>
+    <td>
+    Ativa/Desativa luzes externas
+    </td>
+    <td>
+    Permite ativar diversas automações ao mesmo tempo, principalmente as que são iluminação externa. Util para evitar por exemplo que eu tenha que em cada automação eu verifique o nivel de luminozidade em cada local.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    turn_on_the_light_inside
+    </td>
+    <td>
+    Ativa/Desativa luzes internas
+    </td>
+    <td>
+    Permite ativar diversas automações ao mesmo tempo, principalmente as que são iluminação interna. Mesmo proposito do controle anterior.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    turn_on_light_motion
+    </td>
+    <td>
+    Ativa/Desativa iluminação baseado em presença
+    </td>
+    <td>
+    Permite que algumas automações verifique esse controle antes de acender uma luz automaticamente. Util para desativar todas as automações durante o dia ou quando a iluminação esta favoravel.
+    </td>
+  </tr>
+
+  </table>
+
+
 ## Automações
 
 <table align="center" border="0">
@@ -444,6 +552,14 @@
   <tr>
     <td>
     Acende a luz externa e interna quando o nível de luminosidade for baixa Também habilita os sensores de presença que eles liguem as luzes quando houver movimento.
+
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    Acende a luz externa e interna quando o nível de luminosidade for baixa Também habilita os sensores de presença que eles liguem as luzes quando houver movimento.
+
     </td>
   </tr>
 
