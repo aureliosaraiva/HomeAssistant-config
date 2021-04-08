@@ -432,3 +432,49 @@
     <td>2</td>
     <td>Wifi, local, ESPHome</td>
   </tr>
+</table>
+
+## Automações
+
+<table align="center" border="0">
+  <tr>
+    <th>Descrição</th>
+  </tr>
+
+  <tr>
+    <td>
+    Acende a luz externa e interna quando o nível de luminosidade for baixa Também habilita os sensores de presença que eles liguem as luzes quando houver movimento.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    Quando a porta da geladeira fica aberta por um certo tempo a Alexa informa que a mesma esta aberta pedindo para ser fechada.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    Quando a porta da adega de vinho fica aberta por muito tempo a Alexa informa que é necessário fecha-la para manter a temperatura estável. Quando a porta é fechada ela agradece.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    Luzes do closet acendem automaticamente quando uma presença é detectada. E desligada após um tempo de inatividade.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    Quando começa a chover recebo um aviso da Alexa e notificação no Telegram.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    Logo tem mais...
+    </td>
+  </tr>
+
+  </table>
