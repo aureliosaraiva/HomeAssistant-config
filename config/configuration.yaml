@@ -19,7 +19,7 @@ scene: !include scenes.yaml
 light: !include light.yaml
 utility_meter: !include utility_meter.yaml
 input_boolean: !include input_boolean.yaml
-input_select:: !include input_select.yaml
+input_select: !include input_select.yaml
 input_number: !include input_number.yaml
 switch: !include switch.yaml
 input_text: !include input_text.yaml
