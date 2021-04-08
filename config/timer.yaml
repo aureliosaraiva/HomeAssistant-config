@@ -1,0 +1,5 @@
+zigbee_permit_join:
+  name: Time remaining
+  duration: 120
+rain:
+  duration: "00:30:00"

@@ -1,0 +1,27 @@
+run_pool_pump_hours_swimming_season:
+  name: Run Pool Pump in Swimming Season
+  min: 1
+  max: 8
+  step: 1
+  mode: slider
+run_pool_pump_hours_off_season:
+  name: Run Pool Pump in Off Season
+  min: 1
+  max: 6
+  step: 1
+  mode: slider
+zigbee2mqtt_join_minutes:
+  name: "Zigbee2MQTT join minutes"
+  initial: 2
+  min: 1
+  max: 5
+  step: 1
+  mode: slider
+tarifa_kwh:
+  name: "Valor kW/h"
+  initial: 0.99776
+  min: 0
+  max: 10
+  step: 0.001
+  unit_of_measurement: "R$"
+  mode: box
