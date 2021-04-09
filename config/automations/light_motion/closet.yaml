@@ -9,9 +9,6 @@
     - condition: and
       conditions:
         - condition: state
-          entity_id: input_boolean.away_mode
-          state: 'off'
-        - condition: state
           entity_id: input_boolean.turn_on_light_motion
           state: 'on'
   action:

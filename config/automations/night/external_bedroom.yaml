@@ -1,0 +1,11 @@
+
+- id: turn_on_the_light_with_lux_below_15
+  alias: turn_on_the_light_with_lux_below_15
+  trigger:
+    - platform: state
+      entity_id: input_boolean.turn_on_the_light_external
+      from: 'off'
+      to: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.switch_wall_closet_bottom
