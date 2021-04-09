@@ -1,0 +1,38 @@
+- id: turn_on_the_light_closet
+  alias: turn_on_the_light_closet
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_closet_occupancy
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: input_boolean.turn_on_light_motion
+          state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.switch_wall_closet_top
+    - service: light.turn_on
+      entity_id: light.lamps_closet
+      data:
+        transition: 2000
+    - service: automation.turn_on
+      entity_id: automation.turn_off_the_light_closet
+
+- id: turn_off_the_light_closet
+  alias: turn_off_the_light_closet
+  initial_state: off
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_closet_occupancy
+      from: 'on'
+      to: 'off'
+      for: '00:00:30'
+  condition:
+  action:
+    - service: light.turn_off
+      entity_id: light.lamps_closet
+    - service: automation.turn_off
+      entity_id: automation.turn_off_the_light_closet

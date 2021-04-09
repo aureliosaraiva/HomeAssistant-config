@@ -1,0 +1,10 @@
+- id: turn_on_the_light_away_mode
+  alias: turn_on_the_light_away_mode
+  trigger:
+    - platform: state
+      entity_id: input_boolean.turn_on_the_light_external
+      from: 'off'
+      to: 'on'
+  condition:
+  action:
+    - service: script.turn_on_light_external

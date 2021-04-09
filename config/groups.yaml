@@ -16,6 +16,12 @@ motion_hall:
     - binary_sensor.motion_hall_occupancy
     - binary_sensor.motion_stairs_occupancy
 
+light_hall:
+  icon: hass:lightbulb
+  entities:
+    - switch.switch_wall_hall_1_l2_hall
+    - switch.switch_wall_hall_3_top
+
 family:
   entities:
     - sensor.tracker_aurelio
