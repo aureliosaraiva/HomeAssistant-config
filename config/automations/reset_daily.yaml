@@ -11,5 +11,5 @@
       entity_id: input_boolean.turn_on_the_light_inside
     - service: input_boolean.turn_off
       entity_id: input_boolean.sleep_mode
-    - service: input_boolean.turn_on
+    - service: input_boolean.turn_off
       entity_id: input_boolean.turn_on_light_motion

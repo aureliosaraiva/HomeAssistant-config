@@ -24,4 +24,4 @@ turn_on_the_light_inside:
   initial: off
 turn_on_light_motion:
   name: Luzez automatica por presença
-  initial: on
+  initial: off
