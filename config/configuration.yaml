@@ -42,7 +42,7 @@ global_macro:
     livingroom: media_player.echo_sala
     kitchen: media_player.echo_dot_cozinha
     bedroom: media_player.echo_dot_quarto
-    laboratory: media_player.echo_dot_laboratorio
+    laboratory: media_player.echo_laboratory
     socialroom: media_player.echo_dot_escritorio
   speech: !include speech.yaml
 
