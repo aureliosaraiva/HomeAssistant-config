@@ -28,7 +28,7 @@ turn_off_other_light:
         - switch.switch_wall_bedroom_center
         - switch.switch_wall_bedroom_bottom
 
-        # - switch.switch_wall_bathroom_top
+        - switch.switch_wall_bathroom_top
         - switch.switch_wall_bathroom_center
         - switch.switch_wall_bathroom_bottom
 
@@ -83,25 +83,35 @@ turn_off_other_light:
         - light.led_americana_cct
         - light.led_americana_rgb
 
-turn_off_light_on_sleep_mode_is_off:
+turn_off_light_bedroom:
   mode: queued
   sequence:
     - condition: state
-      entity_id: input_boolean.sleep_mode
-      state: 'off'
-    - service: switch.turn_off
-      entity_id:
-        - switch.switch_wall_bathroom_top
+      entity_id: input_boolean.away_mode
+      state: 'on'
     - service: light.turn_off
       entity_id:
         - light.lamp_side_bed_aurelio
         - light.lamp_side_bed_camila
 
+
+turn_off_light_guestroom:
+  mode: queued
+  sequence:
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+    - service: switch.turn_off
+      entity_id:
+        - switch.switch_wall_bedroom_guest_2_left
+        - switch.switch_wall_bedroom_guest_1_top
+
 turn_off_all_light:
   mode: queued
   sequence:
     - service: script.turn_off_other_light
-    - service: script.turn_off_light_on_sleep_mode_is_off
+    - service: script.turn_off_light_bedroom
+    - service: script.turn_off_light_guestroom
     - service: script.send_notification
       data_template:
         message: 'Luzes internas desligadas!'
