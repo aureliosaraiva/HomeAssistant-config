@@ -22,8 +22,10 @@ captive_portal:
 logger:
   baud_rate: 0
   level: INFO
-# Enable Home Assistant API//
-api:
+
+mqtt:
+  broker: !secret mqtt_broker
+  discovery: true
 
 ota:
   password: !secret ota_pass
@@ -33,7 +35,7 @@ uart:
   baud_rate: 4800
 
 time:
-  - platform: homeassistant
+  - platform: sntp
     id: my_time
 
 ################################################################################

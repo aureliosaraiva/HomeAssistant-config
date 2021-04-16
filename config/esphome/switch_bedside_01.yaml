@@ -17,13 +17,14 @@ wifi:
     ssid: "$ssid_ap"
     password: !secret AP_mode_pass
 
+mqtt:
+  broker: !secret mqtt_broker
+  discovery: true
+
 captive_portal:
 
 logger:
   baud_rate: 0
-  level: INFO
-# Enable Home Assistant API//
-api:
 
 ota:
   password: !secret ota_pass

@@ -15,7 +15,6 @@ wifi:
   ap:
     ssid: "$ssid_ap"
     password: !secret AP_mode_pass
-
 # mqtt:
   # broker: 192.168.68.109
 
@@ -24,16 +23,16 @@ captive_portal:
 
 logger:
   baud_rate: 0
-  level: INFO
 
-# Enable Home Assistant API//
-api:
+mqtt:
+  broker: !secret mqtt_broker
+  discovery: true
 
 ota:
   password: !secret ota_pass
 
 time:
-  - platform: homeassistant
+  - platform: sntp
     id: my_time
 
 i2c:
@@ -64,7 +63,6 @@ sensor:
     gain: 6.144
     update_interval: 2s
     accuracy_decimals: 5
-    internal: true
     name: "$hostname A1_GND"
     id: bed_right
     filters:
@@ -93,7 +91,6 @@ sensor:
     gain: 6.144
     update_interval: 2s
     accuracy_decimals: 5
-    internal: true
     name: "$hostname A3_GND"
     id: bed_left
     filters:

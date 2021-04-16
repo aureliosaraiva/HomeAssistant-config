@@ -26,14 +26,15 @@ logger:
   baud_rate: 0
   level: INFO
 
-# Enable Home Assistant API//
-api:
+mqtt:
+  broker: !secret mqtt_broker
+  discovery: true
 
 ota:
   password: !secret ota_pass
 
 time:
-  - platform: homeassistant
+  - platform: sntp
     id: my_time
 
 binary_sensor:
