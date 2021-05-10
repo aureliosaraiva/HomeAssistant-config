@@ -41,6 +41,7 @@ doors:
     - binary_sensor.door_garden_contact
     - binary_sensor.door_laundry_contact
     - binary_sensor.door_hall_contact
+    - binary_sensor.door_atelie_contact
 
 devices_battery:
   entities:
