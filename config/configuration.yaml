@@ -102,8 +102,28 @@ cloud:
         - switch.plug_fan
         - switch.switch_wall_laboratory_top
         - switch.switch_wall_office_top
+        - light.lamps_bedroom
+        - light.lamp_side_bed_aurelio
+        - light.lamp_side_bed_camila
+        - switch.switch_wall_bathroom_top
     # https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-discovery.html#display-categories
     entity_config:
+      switch.switch_wall_bathroom_top:
+        name: luz do banheiro
+        description: Luz do banheiro
+        display_categories: LIGHT
+      light.lamp_side_bed_aurelio:
+        name: luz do Aurelio
+        description: Luz do aurelio
+        display_categories: LIGHT
+      light.lamp_side_bed_camila:
+        name: Luz da Camila
+        description: Luz da Camila
+        display_categories: LIGHT
+      light.lamps_bedroom:
+        name: Luzes da suite
+        description: Luzes da suite
+        display_categories: LIGHT
       switch.switch_wall_office_top:
         name: Luz do Atelie
         description: Luz do atelie
