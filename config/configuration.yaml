@@ -101,8 +101,13 @@ cloud:
         - sensor.weather_bedroom_temperature
         - switch.plug_fan
         - switch.switch_wall_laboratory_top
+        - switch.switch_wall_office_top
     # https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-discovery.html#display-categories
     entity_config:
+      switch.switch_wall_office_top:
+        name: Luz do Atelie
+        description: Luz do atelie
+        display_categories: LIGHT
       switch.switch_wall_laboratory_top:
         name: Luz
         description: Luz
