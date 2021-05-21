@@ -3,7 +3,7 @@
   trigger:
     - platform: state
       entity_id: sensor.button_scenes_action
-      to: '1_double'
+      to: '2_single'
   action:
     - choose:
         - conditions:

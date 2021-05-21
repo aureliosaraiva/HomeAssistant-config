@@ -127,3 +127,50 @@
       entity_id:
         - light.lamp_side_bed_aurelio
         - light.lamp_side_bed_camila
+
+
+- alias: virtual_switch_hall_1
+  id: virtual_switch_hall_1
+  trigger:
+    - platform: state
+      entity_id: switch.switch_wall_hall_3_center
+  action:
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: switch.switch_wall_hall_3_center
+              state: 'on'
+          sequence:
+            - service: switch.turn_on
+              entity_id: switch.switch_wall_hall_1_l2_hall
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: switch.switch_wall_hall_3_center
+              state: 'off'
+          sequence:
+            - service: switch.turn_off
+              entity_id: switch.switch_wall_hall_1_l2_hall
+
+- alias: virtual_switch_hall_2
+  id: virtual_switch_hall_2
+  trigger:
+    - platform: state
+      entity_id: switch.switch_wall_hall_1_l2_hall
+  action:
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: switch.switch_wall_hall_1_l2_hall
+              state: 'on'
+          sequence:
+            - service: switch.turn_on
+              entity_id: switch.switch_wall_hall_3_center
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: switch.switch_wall_hall_1_l2_hall
+              state: 'off'
+          sequence:
+            - service: switch.turn_off
+              entity_id: switch.switch_wall_hall_3_center
