@@ -3,8 +3,8 @@ blueprint:
   description: Turn on/off two switch
   domain: automation
   input:
-    target_switch:
     origin_switch:
+    target_switch:
     target_automation:
 
 trigger:
