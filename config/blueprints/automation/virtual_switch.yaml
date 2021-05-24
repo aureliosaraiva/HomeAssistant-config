@@ -21,9 +21,9 @@ action:
             state: 'on'
         sequence:
           - service: switch.turn_on
-            entity_id: //!input target_switch
+            entity_id: !input target_switch
           - service: automation.turn_on
-            entity_id: //!input target_automation
+            entity_id: !input target_automation
   - choose:
       - conditions:
           - condition: state
