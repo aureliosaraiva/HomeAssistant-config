@@ -1,0 +1,36 @@
+blueprint:
+  name: Virtual Switch
+  description: Turn on/off two switch
+  domain: automation
+  input:
+    target_switch:
+    origin_switch:
+    target_automation:
+
+trigger:
+  - platform: state
+    entity_id: !input origin_switch
+
+action:
+  - service: automation.turn_off
+    entity_id: !input target_automation
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: !input origin_switch
+            state: 'on'
+        sequence:
+          - service: switch.turn_on
+            entity_id: //!input target_switch
+          - service: automation.turn_on
+            entity_id: //!input target_automation
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: !input origin_switch
+            state: 'off'
+        sequence:
+          - service: switch.turn_off
+            entity_id: !input target_switch
+          - service: automation.turn_on
+            entity_id: !input target_automation

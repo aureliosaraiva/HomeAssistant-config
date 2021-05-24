@@ -128,130 +128,42 @@
         - light.lamp_side_bed_aurelio
         - light.lamp_side_bed_camila
 
-#########################################################
-#
-# Hall corredor
-#
-########################################################
 
+################################################################################
 - alias: virtual_switch_hall_1
   id: virtual_switch_hall_1
-  trigger:
-    - platform: state
-      entity_id: switch.switch_wall_hall_3_center
-  action:
-    - service: automation.turn_on
-      entity_id: automation.virtual_switch_hall_2
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: switch.switch_wall_hall_3_center
-              state: 'on'
-          sequence:
-            - service: switch.turn_on
-              entity_id: switch.switch_wall_hall_1_l2_hall
-            - service: automation.turn_on
-              entity_id: automation.virtual_switch_hall_2
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: switch.switch_wall_hall_3_center
-              state: 'off'
-          sequence:
-            - service: switch.turn_off
-              entity_id: switch.switch_wall_hall_1_l2_hall
-            - service: automation.turn_on
-              entity_id: automation.virtual_switch_hall_2
+  use_blueprint:
+    path: virtual_switch.yaml
+    input:
+      origin_switch: switch.switch_wall_hall_3_center
+      target_switch: switch.switch_wall_hall_1_l2_hall
+      target_automation: automation.virtual_switch_hall_2
 
 - alias: virtual_switch_hall_2
   id: virtual_switch_hall_2
-  trigger:
-    - platform: state
-      entity_id: switch.switch_wall_hall_1_l2_hall
-  action:
-    - service: automation.turn_off
-      entity_id: automation.virtual_switch_hall_1
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: switch.switch_wall_hall_1_l2_hall
-              state: 'on'
-          sequence:
-            - service: switch.turn_on
-              entity_id: switch.switch_wall_hall_3_center
-            - service: automation.turn_on
-              entity_id: automation.virtual_switch_hall_1
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: switch.switch_wall_hall_1_l2_hall
-              state: 'off'
-          sequence:
-            - service: switch.turn_off
-              entity_id: switch.switch_wall_hall_3_center
-            - service: automation.turn_on
-              entity_id: automation.virtual_switch_hall_1
+  use_blueprint:
+    path: virtual_switch.yaml
+    input:
+      origin_switch: switch.switch_wall_hall_1_l2_hall
+      target_switch: switch.switch_wall_hall_3_center
+      target_automation: automation.virtual_switch_hall_1
 
 
-#########################################################
-#
-# Hall escada
-#
-########################################################
+################################################################################
 - alias: virtual_switch_stairs_1
   id: virtual_switch_stairs_1
-  trigger:
-    - platform: state
-      entity_id: switch.switch_wall_hall_3_bottom
-  action:
-    - service: automation.turn_on
-      entity_id: automation.virtual_switch_stairs_2
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: switch.switch_wall_hall_3_bottom
-              state: 'on'
-          sequence:
-            - service: switch.turn_on
-              entity_id: group.balizador
-            - service: automation.turn_on
-              entity_id: automation.virtual_switch_stairs_2
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: switch.switch_wall_hall_3_bottom
-              state: 'off'
-          sequence:
-            - service: switch.turn_off
-              entity_id: group.balizador
-            - service: automation.turn_on
-              entity_id: automation.virtual_switch_stairs_2
+  use_blueprint:
+    path: virtual_switch.yaml
+    input:
+      origin_switch: switch.switch_wall_hall_3_bottom
+      target_switch: group.balizador
+      target_automation: automation.virtual_switch_stairs_2
 
 - alias: virtual_switch_stairs_2
   id: virtual_switch_stairs_2
-  trigger:
-    - platform: state
-      entity_id: group.balizador
-  action:
-    - service: automation.turn_off
-      entity_id: automation.virtual_switch_stairs_1
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: group.balizador
-              state: 'on'
-          sequence:
-            - service: switch.turn_on
-              entity_id: switch.switch_wall_hall_3_bottom
-            - service: automation.turn_on
-              entity_id: automation.virtual_switch_stairs_1
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: group.balizador
-              state: 'off'
-          sequence:
-            - service: switch.turn_off
-              entity_id: switch.switch_wall_hall_3_bottom
-            - service: automation.turn_on
-              entity_id: automation.virtual_switch_stairs_1
+  use_blueprint:
+    path: virtual_switch.yaml
+    input:
+      origin_switch: group.balizador
+      target_switch: switch.switch_wall_hall_3_bottom
+      target_automation: automation.virtual_switch_stairs_1
