@@ -2,7 +2,7 @@
 
   {%- macro iss() -%}
   {% if is_state('binary_sensor.iss', 'on') -%}
-      <break time="1s" />Ha, mais uma coisa, <break time="1s" /> 
+      <break time="1s" />Ha, mais uma coisa, <break time="1s" />
       Tenho algo interessante. A estação espacial internacional está acima de nós agora. Existem {{states.binary_sensor.iss.attributes ['number_of_people_in_space']}} pessoas no espaço agora.
   {% endif -%}
   {%- endmacro -%}
@@ -39,6 +39,6 @@
     <p>{{ custom_message }}</p>
 
     {% if call_no_random != 1 %}
-    <p>{{ ([moon, iss]|random)() }}</p>
+    <p>{{ ([moon]|random)() }}</p>
     {% endif %}
   </speak>
