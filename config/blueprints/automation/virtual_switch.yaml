@@ -20,7 +20,7 @@ action:
             entity_id: !input origin_switch
             state: 'on'
         sequence:
-          - service: switch.turn_on
+          - service: homeassistant.turn_on
             entity_id: !input target_switch
           - service: automation.turn_on
             entity_id: !input target_automation
@@ -30,7 +30,7 @@ action:
             entity_id: !input origin_switch
             state: 'off'
         sequence:
-          - service: switch.turn_off
+          - service: homeassistant.turn_off
             entity_id: !input target_switch
           - service: automation.turn_on
             entity_id: !input target_automation

@@ -162,10 +162,6 @@ cloud:
         name: Luz do quarto
         description: Luz do quarto
         display_categories: LIGHT
-      switch.switch_wall_bathroom_top:
-        name: Luz do banheiro
-        description: Luz do banheiro
-        display_categories: LIGHT
       sensor.weather_bedroom_temperature:
         name: Temperatura do quarto
         description: Temperatura do quarto
