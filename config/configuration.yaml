@@ -107,7 +107,6 @@ cloud:
         - light.lamps_bedroom
         - light.lamp_side_bed_aurelio
         - light.lamp_side_bed_camila
-        - switch.switch_wall_bathroom_top
         - script.enable_sleep_mode
     # https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-discovery.html#display-categories
     entity_config:
