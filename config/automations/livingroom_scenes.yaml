@@ -1,43 +1,43 @@
-- alias: button_scenes_1_double
-  id: button_scenes_1_double
+- alias: button_scenes_4_single
+  id: button_scenes_4_single
   trigger:
     - platform: state
       entity_id: sensor.button_scenes_action
-      to: '2_single'
+      to: '4_single'
   action:
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: switch.circadian_lighting_livingroom
-              state: 'on'
-          sequence:
-            - service: switch.turn_off
-              entity_id: switch.circadian_lighting_livingroom
-            - service: light.turn_on
-              entity_id: light.lamps_center_livingroom
-              data:
-                brightness: 200
-                color_temp: 200
-            - service: script.speech_engine
-              data_template:
-                media_player: >
-                  {{speaker('livingroom')}}
-                custom_message: >
-                  {{random_speech('livingroom_circadian_off')}}
-    - choose:
-        - conditions:
-            - condition: state
-              entity_id: switch.circadian_lighting_livingroom
-              state: 'off'
-          sequence:
-            - service: switch.turn_on
-              entity_id: switch.circadian_lighting_livingroom
-            - service: script.speech_engine
-              data_template:
-                media_player: >
-                  {{speaker('livingroom')}}
-                custom_message: >
-                  {{random_speech('livingroom_circadian_on')}}
+    - service: switch.turn_off
+      entity_id: switch.circadian_lighting_livingroom
+    - service: light.turn_on
+      entity_id: light.lamps_center_livingroom
+      data:
+        brightness: 200
+        color_temp: 200
+    - service: script.speech_engine
+      data_template:
+        media_player: >
+          {{speaker('livingroom')}}
+        custom_message: >
+          {{random_speech('livingroom_circadian_off')}}
+
+- alias: button_scenes_3_single
+  id: button_scenes_3_single
+  trigger:
+    - platform: state
+      entity_id: sensor.button_scenes_action
+      to: '3_single'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.circadian_lighting_livingroom
+    - service: light.turn_on
+      entity_id: light.lamps_center_livingroom
+    - service: script.speech_engine
+      data_template:
+        media_player: >
+          {{speaker('livingroom')}}
+        custom_message: >
+          {{random_speech('livingroom_circadian_on')}}
+
+################################################################################
 
 - alias: button_scenes_1_single
   id: button_scenes_1_single

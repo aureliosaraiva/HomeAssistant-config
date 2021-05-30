@@ -77,7 +77,7 @@ sleep_mode:
 
 livingroom_circadian_off:
   - Controle de iluminação desativado
-  - Iluminação ambiente desativa
+  - Iluminação ambiente desativada
 
 livingroom_circadian_on:
   - Religando as luzes ambiente
