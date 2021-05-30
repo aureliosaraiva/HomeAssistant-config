@@ -2,7 +2,7 @@ version: '3'
 services:
   homeassistant:
     container_name: home-assistant
-    image: homeassistant/home-assistant:stable
+    image: homeassistant/home-assistant:2021.4.1
     volumes:
       - /home/aureliosaraiva/homeassistant/config:/config
     environment:
