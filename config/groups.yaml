@@ -10,6 +10,12 @@ balizador:
     - switch.switch_side_hall
     - switch.switch_side_stairs
 
+bedside:
+  icon: hass:lightbulb
+  entities:
+    - light.lamp_side_bed_aurelio
+    - light.lamp_side_bed_camila
+
 motion_hall:
   icon: mdi:motion-sensor
   entities:

@@ -1,31 +1,3 @@
-#########################################################
-#
-# Acende luz da piscina (sonoff mini) através do botão central do interruptor
-#
-########################################################
-- id: turn_on_pool_lights_with_switch_wall_garden_center
-  alias: turn_on_pool_lights_with_switch_wall_garden_center
-  trigger:
-    - platform: state
-      entity_id: switch.switch_wall_garden_center
-      from: 'off'
-      to: 'on'
-  condition:
-  action:
-    - service: switch.turn_on
-      entity_id: switch.lamp_pool
-
-- id: turn_off_pool_lights_with_switch_wall_garden_center
-  alias: turn_off_pool_lights_with_switch_wall_garden_center
-  trigger:
-    - platform: state
-      entity_id: switch.switch_wall_garden_center
-      from: 'on'
-      to: 'off'
-  condition:
-  action:
-    - service: switch.turn_off
-      entity_id: switch.lamp_pool
 
 #########################################################
 #
@@ -95,39 +67,44 @@
     - service: switch.toggle
       entity_id: switch.switch_wall_hall_2_l2_socialroom
 
-#########################################################
-#
-# Acende luz do abajur no interruptor do quarto
-#
-########################################################
-- id: turn_on_lamp_side_bed_with_switch_wall_bedroom_center
-  alias: turn_on_lamp_side_bed_with_switch_wall_bedroom_center
-  trigger:
-    - platform: state
-      entity_id: switch.switch_wall_bedroom_center
-      from: 'off'
-      to: 'on'
-  condition:
-  action:
-    - service: light.turn_on
-      entity_id:
-        - light.lamp_side_bed_aurelio
-        - light.lamp_side_bed_camila
 
-- id: turn_off_lamp_side_bed_with_switch_wall_bedroom_center
-  alias: turn_off_lamp_side_bed_with_switch_wall_bedroom_center
-  trigger:
-    - platform: state
-      entity_id: switch.switch_wall_bedroom_center
-      from: 'on'
-      to: 'off'
-  condition:
-  action:
-    - service: light.turn_off
-      entity_id:
-        - light.lamp_side_bed_aurelio
-        - light.lamp_side_bed_camila
+################################################################################
+- alias: virtual_switch_pool_1
+  id: virtual_switch_pool_1
+  use_blueprint:
+    path: virtual_switch.yaml
+    input:
+      origin_switch: switch.lamp_pool
+      target_switch: switch.switch_wall_garden_center
+      target_automation: automation.virtual_switch_pool_2
 
+- alias: virtual_switch_pool_2
+  id: virtual_switch_pool_2
+  use_blueprint:
+    path: virtual_switch.yaml
+    input:
+      origin_switch: switch.switch_wall_garden_center
+      target_switch: switch.lamp_pool
+      target_automation: automation.virtual_switch_pool_1
+
+################################################################################
+- alias: virtual_switch_bedside_1
+  id: virtual_switch_bedside_1
+  use_blueprint:
+    path: virtual_switch.yaml
+    input:
+      origin_switch: group.bedside
+      target_switch: switch.switch_wall_bedroom_center
+      target_automation: automation.virtual_switch_bedside_2
+
+- alias: virtual_switch_bedside_2
+  id: virtual_switch_bedside_2
+  use_blueprint:
+    path: virtual_switch.yaml
+    input:
+      origin_switch: switch.switch_wall_bedroom_center
+      target_switch: group.bedside
+      target_automation: automation.virtual_switch_bedside_1
 
 ################################################################################
 - alias: virtual_switch_hall_1
