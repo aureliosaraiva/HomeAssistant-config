@@ -1,0 +1,13 @@
+{
+  "domain": "pool_pump_service",
+  "name": "pool_pump_service",
+  "documentation": "https://github.com/aureliosaraiva/pool_pump_service",
+  "issue_tracker": "https://github.com/aureliosaraiva/pool_pump_service/issues",
+  "dependencies": [],
+  "version": "0.1.0",
+  "config_flow": true,
+  "codeowners": [
+    "@aureliosaraiva"
+  ],
+  "requirements": []
+}
