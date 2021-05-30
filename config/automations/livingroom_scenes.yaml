@@ -10,8 +10,8 @@
     - service: light.turn_on
       entity_id: light.lamps_center_livingroom
       data:
-        brightness: 200
-        color_temp: 200
+        brightness: 230
+        color_temp: 320
     - service: script.speech_engine
       data_template:
         media_player: >
