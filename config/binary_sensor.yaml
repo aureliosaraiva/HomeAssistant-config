@@ -1,18 +1,5 @@
-- platform: iss
-  show_on_map: true
-  name: International Space Station (ISS)
-
-
 - platform: template
   sensors:
-    # alexa_next_alarm_bedroom:
-    #   friendly_name: 'Proximo Alarme Quarto'
-    #   value_template: >
-    #     {% set alarm_time = as_timestamp(states('sensor.echo_sala_next_alarm')) %}
-    #     {% set current_time = as_timestamp(states('sensor.date_time').replace(',', '')) %}
-    #     {% set pre_time = 2 %}
-    #     {{ current_time >= alarm_time - pre_time }}
-
     pool_pump_running:
       value_template: "{{ states.sensor.poolmachine_wattage.state | float > 8 }}"
       friendly_name: "Pool Pump running"
