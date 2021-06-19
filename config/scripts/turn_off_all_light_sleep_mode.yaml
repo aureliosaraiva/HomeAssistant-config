@@ -1,6 +1,10 @@
-turn_off_all_light:
+turn_off_all_light_sleep_mode:
   mode: queued
   sequence:
+    - service: light.turn_on
+      entity_id:
+        - light.lamp_side_bed_aurelio
+        - light.lamp_side_bed_camila
     - service: switch.turn_off
       entity_id:
         - switch.switch_side_hall
@@ -19,16 +23,16 @@ turn_off_all_light:
         - switch.switch_wall_laundry_center
         - switch.switch_wall_laundry_bottom
 
-        - switch.switch_wall_closet_top
+        # - switch.switch_wall_closet_top
         - switch.switch_wall_closet_center
         - switch.switch_wall_closet_bottom
 
-        - switch.switch_wall_bedroom_top
+        # - switch.switch_wall_bedroom_top
         # virtual switch bedside light
-        - switch.switch_wall_bedroom_center
+        # - switch.switch_wall_bedroom_center
         - switch.switch_wall_bedroom_bottom
 
-        - switch.switch_wall_bathroom_top
+        # - switch.switch_wall_bathroom_top
         - switch.switch_wall_bathroom_center
         - switch.switch_wall_bathroom_bottom
 
@@ -81,8 +85,3 @@ turn_off_all_light:
         - light.lamps_bedroom
         - light.led_americana_cct
         - light.led_americana_rgb
-        - light.lamp_side_bed_aurelio
-        - light.lamp_side_bed_camila
-    - service: script.send_notification
-      data_template:
-        message: 'Luzes internas desligadas!'

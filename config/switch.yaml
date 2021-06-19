@@ -18,6 +18,7 @@
   name: socialroom
   lights_ct:
     - light.lamps_socialroom
+    - light.lamp_spot_livingroom
 - platform: circadian_lighting
   name: bedroom
   lights_ct:
@@ -26,3 +27,8 @@
   name: closet
   lights_ct:
     - light.lamps_closet
+- platform: circadian_lighting
+  name: led_kitchen
+  lights_ct:
+    - light.led_americana_cct
+    - light.led_kitchen_cct

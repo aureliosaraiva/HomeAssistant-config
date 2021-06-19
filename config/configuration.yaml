@@ -108,8 +108,18 @@ cloud:
         - light.lamp_side_bed_aurelio
         - light.lamp_side_bed_camila
         - script.enable_sleep_mode
+        - script.enable_nigth_mode
+        - script.light_mode_living_room
     # https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-discovery.html#display-categories
     entity_config:
+      script.light_mode_living_room:
+        name: Script Light mode Living room
+        description: Script Light mode Living room
+        display_categories: SCENE_TRIGGER
+      script.enable_nigth_mode:
+        name: Script Nigth mode
+        description: Script Nigth mode
+        display_categories: SCENE_TRIGGER
       script.enable_sleep_mode:
         name: Script Sleep mode
         description: Script Sleep mode

@@ -51,3 +51,13 @@
       data:
         color_temp: 200
         brightness: 46
+
+
+- alias: button_scenes_3_hold
+  id: button_scenes_3_hold
+  trigger:
+    - platform: state
+      entity_id: sensor.button_scenes_action
+      to: '3_hold'
+  action:
+    - service: script.light_mode_living_room

@@ -1,0 +1,30 @@
+light_mode_living_room:
+  mode: queued
+  sequence:
+    - service: switch.turn_off
+      entity_id:
+        - switch.switch_wall_hall_2_l3_external_side
+        - switch.switch_wall_kitchen_top
+
+    - service: switch.turn_on
+      entity_id:
+        - switch.switch_wall_hall_2_l4_spot
+        - switch.switch_wall_hall_2_l2_socialroom
+        - switch.switch_wall_laundry_top
+        - switch.switch_wall_laundry_center
+        - switch.switch_wall_laundry_bottom
+        - switch.switch_wall_kitchen_top
+
+    - service: switch.turn_on
+      entity_id:
+        - switch.circadian_lighting_livingroom
+        - switch.circadian_led_kitchen
+        - switch.circadian_socialroom
+
+    - service: light.turn_on
+      entity_id:
+        - light.lamps_center_livingroom
+        - light.lamps_socialroom
+        - light.lamp_spot_livingroom
+        - light.led_americana_cct
+        - light.led_kitchen_cct

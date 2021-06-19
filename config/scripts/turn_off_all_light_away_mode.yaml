@@ -1,4 +1,4 @@
-turn_off_all_light:
+turn_off_all_light_away_mode:
   mode: queued
   sequence:
     - service: switch.turn_off
@@ -73,6 +73,8 @@ turn_off_all_light:
 
     - service: light.turn_off
       entity_id:
+        - light.lamp_side_bed_aurelio
+        - light.lamp_side_bed_camila
         - light.lamps_center_livingroom
         - light.lamps_bedroom
         - light.lamps_closet
@@ -81,8 +83,3 @@ turn_off_all_light:
         - light.lamps_bedroom
         - light.led_americana_cct
         - light.led_americana_rgb
-        - light.lamp_side_bed_aurelio
-        - light.lamp_side_bed_camila
-    - service: script.send_notification
-      data_template:
-        message: 'Luzes internas desligadas!'

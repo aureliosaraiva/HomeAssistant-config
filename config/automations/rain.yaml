@@ -1,6 +1,6 @@
 - alias: when_start_rain
   id: when_start_rain
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     - platform: numeric_state
       entity_id: sensor.rain_water_level_analogica
@@ -22,7 +22,7 @@
 
 - alias: when_start_rain_notify
   id: when_start_rain_notify
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     - platform: event
       event_type: timer.started
