@@ -53,11 +53,11 @@
         brightness: 46
 
 
-- alias: button_scenes_3_hold
-  id: button_scenes_3_hold
+- alias: button_scenes_2_single
+  id: button_scenes_2_single
   trigger:
     - platform: state
       entity_id: sensor.button_scenes_action
-      to: '3_hold'
+      to: '2_single'
   action:
     - service: script.light_mode_living_room
