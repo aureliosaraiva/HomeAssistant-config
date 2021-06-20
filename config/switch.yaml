@@ -18,6 +18,9 @@
   name: socialroom
   lights_ct:
     - light.lamps_socialroom
+- platform: circadian_lighting
+  name: socialroom_spot
+  lights_ct:
     - light.lamp_spot_livingroom
 - platform: circadian_lighting
   name: bedroom
