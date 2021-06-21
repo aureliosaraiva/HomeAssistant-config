@@ -126,3 +126,16 @@ switch_sleep_mode:
     - switch.lamp_kiosk
     - switch.lamp_machine_house
     - switch.lamp_pool
+
+light_sleep_mode:
+  entities:
+    - light.lamps_center_livingroom
+    - light.lamps_bedroom
+    - light.lamps_closet
+    - light.lamps_socialroom
+    - light.lamp_spot_livingroom
+    - light.lamps_bedroom
+    - light.led_americana_cct
+    - light.led_americana_rgb
+    - light.lamp_side_bed_aurelio
+    - light.lamp_side_bed_camila
