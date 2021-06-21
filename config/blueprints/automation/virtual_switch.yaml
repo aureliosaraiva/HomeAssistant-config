@@ -20,6 +20,7 @@ action:
             entity_id: !input origin_switch
             state: 'on'
         sequence:
+          - delay: 00:00:01
           - service: homeassistant.turn_on
             entity_id: !input target_switch
           - service: automation.turn_on
@@ -30,6 +31,7 @@ action:
             entity_id: !input origin_switch
             state: 'off'
         sequence:
+          - delay: 00:00:01
           - service: homeassistant.turn_off
             entity_id: !input target_switch
           - service: automation.turn_on
