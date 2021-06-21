@@ -83,6 +83,4 @@ turn_off_all_light:
         - light.led_americana_rgb
         - light.lamp_side_bed_aurelio
         - light.lamp_side_bed_camila
-    - service: script.send_notification
-      data_template:
-        message: 'Luzes internas desligadas!'
+    
