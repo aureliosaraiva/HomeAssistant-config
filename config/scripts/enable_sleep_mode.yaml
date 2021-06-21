@@ -1,6 +1,14 @@
 enable_sleep_mode:
   mode: queued
   sequence:
+    - service: script.speech_engine
+      data_template:
+        call_no_random: 0
+        call_door_window: 1
+        media_player: >
+          {{speaker('bedroom')}}
+        custom_message: >
+          {{random_speech('sleep_mode')}}
     - service: input_boolean.turn_off
       entity_id: input_boolean.turn_on_light_motion
     - service: input_boolean.turn_on

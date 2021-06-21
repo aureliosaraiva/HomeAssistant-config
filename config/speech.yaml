@@ -71,9 +71,7 @@ washing_machine_end:
   - Desculpa incomodar, mais detectei que a máquina de lavar roupas terminou de lavar.
 
 sleep_mode:
-  - Todos estão na cama, estou apagando as luzes
-  - Vou desligar todas as luzes, boa noite!
-  - Boa noite, estou desligando todas as luzes!
+  - Ativando modo noturno, alarme ativado e luzes desligadas!
 
 livingroom_circadian_off:
   - Controle de iluminação desativado

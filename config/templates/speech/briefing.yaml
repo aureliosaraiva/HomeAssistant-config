@@ -7,6 +7,19 @@
   {% endif -%}
   {%- endmacro -%}
 
+  {%- macro check_door_window() -%}
+  {%- if is_state('group.doors', 'on') and is_state('group.windows', 'on')%}
+    Detectei que algumas portas e janelas ainda estão abertas.
+  {%- elif is_state('group.doors', 'on') -%}
+    Detectei que alguma porta esta aberta.
+  {%- elif is_state('group.windows', 'on') -%}
+    Detectei que alguma janela esta aberta.
+  {%- else -%}
+    Todas as portas e janelas estão fechadas.
+  {%- endif -%}
+  {%- endmacro -%}
+
+
   {%- macro moon() -%}
     {% if states.sensor.moon.state == 'full_moon' %}
       <break time="1s" />Ha, mais uma coisa, <break time="1s" />
@@ -37,6 +50,15 @@
   <speak>
 
     <p>{{ custom_message }}</p>
+
+    {% if call_door_window == 1 %}
+    <p>{{ check_door_window() }}</p>
+    {% endif %}
+
+    {% if call_after_message == 1 %}
+    <p>{{ after_message }}</p>
+    {% endif %}
+
 
     {% if call_no_random != 1 %}
     <p>{{ ([moon]|random)() }}</p>
