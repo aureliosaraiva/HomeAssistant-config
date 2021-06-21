@@ -3,31 +3,19 @@
     - platform: numeric_state
       entity_id: sensor.lumens_garden_illuminance_lux
       below: 60
+    - platform: homeassistant
+      event: start
+    - platform: event
+      event_type: automation_reloaded
+  condition:
+    - condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.lumens_garden_illuminance_lux
+          below: 60
   action:
     - service: input_boolean.turn_on
-      entity_id: input_boolean.turn_on_the_light_external
-
-- alias: sensor_turn_off_the_light_external
-  trigger:
-    - platform: sun
-      event: sunrise
-      offset: "-01:00:00"
-    - platform: state
-      entity_id: input_boolean.sleep_mode
-      to: 'on'
-  action:
-    - service: input_boolean.turn_off
       entity_id:
         - input_boolean.turn_on_the_light_external
-        - input_boolean.turn_on_light_motion
-
-- alias: sensor_turn_on_the_light_inside
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.lumens_garden_illuminance_lux
-      below: 60
-  action:
-    - service: input_boolean.turn_on
-      entity_id:
         - input_boolean.turn_on_the_light_inside
         - input_boolean.turn_on_light_motion
