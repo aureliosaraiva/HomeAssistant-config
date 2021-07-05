@@ -1,0 +1,12 @@
+- id: '1617920602142'
+  alias: Nova Automação
+  description: teste
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    attribute: code_format
+  condition: []
+  action:
+  - event: test
+    event_data: {}
+  mode: single

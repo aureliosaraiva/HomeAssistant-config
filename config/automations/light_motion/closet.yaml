@@ -1,5 +1,6 @@
 - id: turn_on_the_light_closet
   alias: turn_on_the_light_closet
+  initial_state: 'off'
   trigger:
     - platform: state
       entity_id: binary_sensor.motion_closet_occupancy
