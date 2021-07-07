@@ -47,3 +47,4 @@ storage.bkp
 .*DS_Store
 zigbee2mqtt
 .android
+!node-red/flows.json

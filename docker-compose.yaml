@@ -2,7 +2,7 @@ version: '3'
 services:
   homeassistant:
     container_name: home-assistant
-    image: homeassistant/home-assistant:2021.4.1
+    image: homeassistant/home-assistant:latest
     volumes:
       - /home/aureliosaraiva/homeassistant/config:/config
     environment:
@@ -20,7 +20,7 @@ services:
       retries: 6
   mqtt:
       container_name: mqtt
-      image: eclipse-mosquitto:1.6
+      image: eclipse-mosquitto:latest
       # ports:
       #   - "1883:1883"
       #   - "9001:9001"
@@ -59,14 +59,14 @@ services:
       - /home/aureliosaraiva/homeassistant/config/esphome:/config
     environment:
       - TZ=Brazil/East
-  # nodered:
-  #   container_name: node-red
-  #   image: nodered/node-red
-  #   volumes:
-  #     - /home/aureliosaraiva/homeassistant/node-red:/data
-  #   ports:
-  #     - 1880:1880
-  #   restart: always
-  #   user: 1000:1000
-  #   environment:
-  #     - TZ=Brazil/East
+  nodered:
+    container_name: node-red
+    image: nodered/node-red
+    volumes:
+      - /home/aureliosaraiva/homeassistant/node-red:/data
+    ports:
+      - 1880:1880
+    restart: always
+    user: 1000:1000
+    environment:
+      - TZ=Brazil/East
