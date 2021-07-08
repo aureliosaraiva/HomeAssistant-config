@@ -1,0 +1,13 @@
+{
+  "domain": "global_macro",
+  "name": "global_macro",
+  "documentation": "https://github.com/aureliosaraiva/global_macro",
+  "issue_tracker": "https://github.com/aureliosaraiva/global_macro/issues",
+  "dependencies": [],
+  "version": "0.1.0",
+  "config_flow": true,
+  "codeowners": [
+    "@aureliosaraiva"
+  ],
+  "requirements": []
+}

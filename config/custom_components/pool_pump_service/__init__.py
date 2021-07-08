@@ -70,10 +70,10 @@ def setup(hass, config):
                 date = now.date()
                 sunrise = get_astral_event_date(hass, 'sunrise', date)
                 sunset = get_astral_event_date(hass, 'sunset', date)
-                _LOGGER.info("* Sunrise: %s",
-                             sunrise.astimezone(hass.config.time_zone))
-                _LOGGER.info("* Sunset: %s",
-                             sunset.astimezone(hass.config.time_zone))
+                # _LOGGER.info("* Sunrise: %s",
+                #              sunrise.astimezone(hass.config.time_zone))
+                # _LOGGER.info("* Sunset: %s",
+                #              sunset.astimezone(hass.config.time_zone))
                 if swimming_season.state == 'on':
                     # Swimming Season (Summer)
                     _LOGGER.info("* Swimming season")
@@ -87,9 +87,9 @@ def setup(hass, config):
                     run_1_start = sunrise + timedelta(
                         minutes=SWIMMING_SEASON_RUN_1_AFTER_SUNRISE_OFFSET_MINS)
                     run_1_stop = run_1_start + timedelta(minutes=duration1)
-                    _LOGGER.info("* Run 1/3: %s - %s",
-                                 run_1_start.astimezone(hass.config.time_zone),
-                                 run_1_stop.astimezone(hass.config.time_zone))
+                    # _LOGGER.info("* Run 1/3: %s - %s",
+                    #              run_1_start.astimezone(hass.config.time_zone),
+                    #              run_1_stop.astimezone(hass.config.time_zone))
                     if run_1_start <= now <= run_1_stop:
                         # Turn on pool pump
                         _LOGGER.info("* Pool pump should be on (Run 1/3)")
@@ -99,11 +99,11 @@ def setup(hass, config):
                         run_2_start = run_1_stop + timedelta(
                             minutes=SWIMMING_SEASON_BREAK_1_MINUTES)
                         run_2_stop = run_2_start + timedelta(minutes=duration2)
-                        _LOGGER.info("* Run 2/3: %s - %s",
-                                     run_2_start.astimezone(
-                                         hass.config.time_zone),
-                                     run_2_stop.astimezone(
-                                         hass.config.time_zone))
+                        # _LOGGER.info("* Run 2/3: %s - %s",
+                        #              run_2_start.astimezone(
+                        #                  hass.config.time_zone),
+                        #              run_2_stop.astimezone(
+                        #                  hass.config.time_zone))
                         if run_2_start <= now <= run_2_stop:
                             # Turn on pool pump
                             _LOGGER.info("* Pool pump should be on (Run 2/3)")
@@ -114,11 +114,11 @@ def setup(hass, config):
                                 minutes=SWIMMING_SEASON_BREAK_2_MINUTES)
                             run_3_stop = run_3_start + timedelta(
                                 minutes=duration3)
-                            _LOGGER.info("* Run 3/3: %s - %s",
-                                         run_3_start.astimezone(
-                                             hass.config.time_zone),
-                                         run_3_stop.astimezone(
-                                             hass.config.time_zone))
+                            # _LOGGER.info("* Run 3/3: %s - %s",
+                            #              run_3_start.astimezone(
+                            #                  hass.config.time_zone),
+                            #              run_3_stop.astimezone(
+                            #                  hass.config.time_zone))
                             if run_3_start <= now <= run_3_stop:
                                 # Turn on pool pump
                                 _LOGGER.info(
@@ -138,9 +138,9 @@ def setup(hass, config):
                     run_1_start = sunrise + timedelta(
                         minutes=OFF_SEASON_RUN_1_AFTER_SUNRISE_OFFSET_MINS)
                     run_1_stop = run_1_start + timedelta(minutes=duration)
-                    _LOGGER.info("* Run 1/2: %s - %s",
-                                 run_1_start.astimezone(hass.config.time_zone),
-                                 run_1_stop.astimezone(hass.config.time_zone))
+                    # _LOGGER.info("* Run 1/2: %s - %s",
+                    #              run_1_start.astimezone(hass.config.time_zone),
+                    #              run_1_stop.astimezone(hass.config.time_zone))
                     if run_1_start <= now <= run_1_stop:
                         # Turn on pool pump
                         _LOGGER.info("* Pool pump should be on (Run 1/2)")
@@ -150,11 +150,11 @@ def setup(hass, config):
                         run_2_start = run_1_stop + timedelta(
                             minutes=OFF_SEASON_1ST_BREAK_MINUTES)
                         run_2_stop = run_2_start + timedelta(minutes=duration)
-                        _LOGGER.info("* Run 2/2: %s - %s",
-                                     run_2_start.astimezone(
-                                         hass.config.time_zone),
-                                     run_2_stop.astimezone(
-                                         hass.config.time_zone))
+                        # _LOGGER.info("* Run 2/2: %s - %s",
+                        #              run_2_start.astimezone(
+                        #                  hass.config.time_zone),
+                        #              run_2_stop.astimezone(
+                        #                  hass.config.time_zone))
                         if run_2_start <= now <= run_2_stop:
                             # Turn on pool pump
                             _LOGGER.info("* Pool pump should be on (Run 2/2)")
