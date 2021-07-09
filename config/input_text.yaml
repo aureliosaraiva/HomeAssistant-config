@@ -7,3 +7,7 @@ zigbee2mqtt_new_name:
 zigbee2mqtt_remove:
   name: Zigbee2MQTT Remove
   initial: ""
+alexa_actionable_notification:
+  name: Alexa Actionable Notification Holder
+  max: 255
+  initial: '{"text": "Este é um teste de skill customizada da alexa. Funcionou?", "event": "actionable.skill.test"}'

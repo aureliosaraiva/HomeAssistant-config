@@ -13,3 +13,19 @@
       state: on
       brightness: 250
       xy_color: [0.205, 0.1]
+
+
+- name: mode_livingroom_ambilight_movie
+  entities:
+    light.lamps_center_livingroom:
+      state: on
+      brightness: 80
+      color_temp: 370
+    light.lamps_socialroom:
+      state: on
+      brightness: 30
+      color_temp: 370
+    light.lamp_spot_livingroom:
+      state: on
+      brightness: 30
+      color_temp: 370

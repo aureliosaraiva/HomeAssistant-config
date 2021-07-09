@@ -1,0 +1,24 @@
+- alias: Front door left unlocked for 5 mins
+  trigger:
+    platform: state
+    entity_id: switch.switch_wall_laboratory_center
+    from: 'off'
+    to: 'on'
+  action:
+    - service: script.activate_alexa_actionable_notification
+      data_template:
+        text: 'A luz do laboratório esta acesa, gostaria de apagar?'
+        event_id: 'actionable_notification_lock_left_unlocked'
+        alexa_device: >
+          {{speaker('laboratory')}}
+- alias: Lock the door via actionable notificaiton
+  trigger:
+    platform: event
+    event_type: alexa_actionable_notification
+    event_data:
+      event_id: actionable_notification_lock_left_unlocked
+      event_response_type: ResponseYes
+
+  action:
+    - service: switch.turn_off
+      entity_id: switch.switch_wall_laboratory_center

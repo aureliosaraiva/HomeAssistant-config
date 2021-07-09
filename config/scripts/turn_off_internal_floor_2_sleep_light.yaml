@@ -1,0 +1,27 @@
+turn_off_internal_floor_2_sleep_light:
+  mode: queued
+  sequence:
+    - service: switch.turn_off
+      entity_id:
+        - switch.switch_wall_bedroom_bottom
+        - switch.switch_wall_bathroom_center
+        - switch.switch_wall_bathroom_bottom
+
+        - switch.switch_wall_laboratory_top
+        - switch.switch_wall_laboratory_center
+        - switch.switch_wall_laboratory_bottom
+
+        - switch.switch_wall_hall_3_top
+
+        - switch.switch_wall_bedroom_guest_1_top
+        - switch.switch_wall_bedroom_guest_1_center
+        - switch.switch_wall_bedroom_guest_1_bottom
+
+        - switch.switch_wall_bedroom_guest_2_left
+        - switch.switch_wall_bedroom_guest_2_center
+        - switch.switch_wall_bedroom_guest_2_right
+
+
+    - service: light.turn_off
+      entity_id:
+        - light.lamp_laboratory

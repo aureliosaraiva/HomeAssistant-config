@@ -6,10 +6,13 @@
   payload_on: "true"
   payload_off: "false"
 - platform: circadian_lighting
-  name: bedside
+  name: bedside_camila
+  lights_ct:
+    - light.lamp_side_bed_camila
+- platform: circadian_lighting
+  name: bedside_aurelio
   lights_ct:
     - light.lamp_side_bed_aurelio
-    - light.lamp_side_bed_camila
 - platform: circadian_lighting
   name: livingroom
   lights_ct:

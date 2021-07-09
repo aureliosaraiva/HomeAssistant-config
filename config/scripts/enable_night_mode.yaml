@@ -1,33 +1,6 @@
 enable_nigth_mode:
   mode: queued
   sequence:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.turn_on_light_motion
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.sleep_mode
-    - service: script.turn_off_all_light
-    - delay: '00:00:10'
-    - condition: or
-      conditions:
-        - condition: state
-          entity_id: group.switch_sleep_mode
-          state: 'on'
-        - condition: state
-          entity_id: group.light_sleep_mode
-          state: 'on'
-    - service: script.turn_off_all_light
-    - service: script.send_notification
-      data_template:
-        message: 'Segunda execução!'
-    - delay: '00:00:10'
-    - condition: or
-      conditions:
-        - condition: state
-          entity_id: group.switch_sleep_mode
-          state: 'on'
-        - condition: state
-          entity_id: group.light_sleep_mode
-          state: 'on'
-    - service: script.send_notification
-      data_template:
-        message: 'FALHA TURN OF ALL THE LIGHT!!!'
+    - event: alexa_actionable_command
+      event_data:
+        event_id: nigth_mode

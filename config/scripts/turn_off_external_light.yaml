@@ -1,0 +1,19 @@
+turn_off_external_light:
+  mode: queued
+  sequence:
+    - service: switch.turn_off
+      entity_id:
+        # Varanda sala
+        - switch.switch_wall_garden_top
+        # Piscina
+        - switch.switch_wall_garden_center
+        - switch.lamp_kiosk
+        - switch.lamp_machine_house
+        - switch.lamp_pool
+        - switch.switch_wall_hall_1_l1_garage
+        - switch.lamp_soton
+        - switch.switch_wall_closet_center
+        - switch.switch_wall_closet_bottom
+        - switch.switch_wall_hall_2_l3_external_side
+        - switch.switch_wall_laundry_center
+        - switch.switch_wall_laundry_bottom
