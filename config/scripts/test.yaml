@@ -1,5 +1,0 @@
-test:
-  sequence:
-    - event: my_test_event
-      event_data:
-        foo: "bar"
