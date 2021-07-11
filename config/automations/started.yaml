@@ -4,13 +4,7 @@
     platform: homeassistant
     event: start
   action:
-    - service: notify.AURELIO
-      data:
-        message: >
-          HomeAssistant online
-    - service: script.speech_engine
-      data_template:
-        media_player: >
-          {{speaker('laboratory')}}
-        custom_message: >
-          {{random_speech('ha_started')}}
+    - event: homeassistant_command
+      event_data:
+        event_id: start
+    
