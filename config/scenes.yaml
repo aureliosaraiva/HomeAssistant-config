@@ -1,25 +1,9 @@
-- name: mode_party
-  icon: mdi:drama-masks
-  entities:
-    light.lamps_center_livingroom:
-      state: on
-      brightness: 173
-      xy_color: [0.2485, 0.4647]
-    light.lamps_socialroom:
-      state: on
-      brightness: 173
-      xy_color: [0.167, 0.197]
-    light.lamp_spot_livingroom:
-      state: on
-      brightness: 250
-      xy_color: [0.205, 0.1]
-
 
 - name: mode_livingroom_ambilight_movie
   entities:
     light.lamps_center_livingroom:
       state: on
-      brightness: 80
+      brightness: 90
       color_temp: 370
     light.lamps_socialroom:
       state: on
@@ -29,3 +13,45 @@
       state: on
       brightness: 30
       color_temp: 370
+    light.led_americana_cct:
+      state: on
+      brightness: 30
+      color_temp: 170
+
+- name: mode_livingroom_ambilight_cool
+  entities:
+    light.lamps_center_livingroom:
+      state: on
+      brightness: 227
+      color_temp: 192
+    light.lamps_socialroom:
+      state: on
+      brightness: 217
+      color_temp: 212
+    light.led_americana_cct:
+      state: on
+      brightness: 132
+      color_temp: 407
+
+- name: mode_livingroom_ambilight_party
+  entities:
+    light.lamps_center_livingroom:
+      state: on
+      brightness: 227
+      rgb_color: 255, 129, 0
+    light.lamps_socialroom:
+      state: on
+      brightness: 217
+      rgb_color: 43, 43, 255
+    light.lamp_spot_livingroom:
+      state: on
+      brightness: 71
+      rgb_color: 165, 77, 255
+    light.led_americana_rgb:
+      state: on
+      brightness: 223
+      xy_color: [0.628, 0.276]
+    light.led_kitchen_rgb:
+      state: on
+      brightness: 223
+      xy_color: [0.17, 0.703]
